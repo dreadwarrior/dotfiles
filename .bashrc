@@ -110,7 +110,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[1;34m\]\h\[\033[00m\]:\w\[\033[31m\]$(__git_ps1 " (%s) ")\[\033[00m\]\$ '
+#PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[1;34m\]\h\[\033[00m\]:\w\[\033[31m\]$(__git_ps1 " (%s) ")\[\033[00m\]\$ '
+
+PS1='${debian_chroot:+($debian_chroot)}\[\e[1;32m\]\u\[\e[0;37m\]@\[\e[1;34m\]\h\[\e[0;00m\]:\[\e[0;37m\]\w$(__git_ps1 "(%s) ")\[\e[1;00m\]\$ '
 
 # cycle through possible completions
 [[ $- = *i* ]] && bind TAB:menu-complete
