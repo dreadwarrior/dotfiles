@@ -119,7 +119,7 @@ PS1='${debian_chroot:+($debian_chroot)}\[\e[1;32m\]\u\[\e[0;37m\]@\[\e[1;34m\]\h
 
 GIT_PROMPT_ONLY_IN_REPO=1
 GIT_PROMPT_SHOW_UPSTREAM=1
-
+GIT_PROMPT_THEME=Solarized
 source ~/.bash-git-prompt/gitprompt.sh
 
 # change directories without `cd`
