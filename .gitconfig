@@ -1,0 +1,32 @@
+[giggle]
+	main-window-maximized = true
+	main-window-geometry = 0x0+0+0
+	history-view-vpane-position = 357
+	main-window-view = HistoryView
+	file-view-vpane-position = 230
+	show-graph = true
+	file-view-hpane-position = 395
+[user]
+	name = Thomas Juhnke\n
+	email = tommy@van-tomas.de
+[color]
+	ui = true
+[core]
+[gui]
+[url "ssh://dreadwarrior@review.typo3.org:29418"]
+	pushInsteadOf = git://git.typo3.org
+[branch]
+	autosetuprebase = remote
+[gui]
+	recentrepo = /home/tommy/public_html/typo3-dev.local/fileadmin/templates/domain.tld
+	fontdiff = -family \"Ubuntu Mono\" -size 12 -weight normal -slant roman -underline 0 -overstrike 0
+	fontui = -family Ubuntu -size 12 -weight normal -slant roman -underline 0 -overstrike 0
+[core]
+	editor = vi
+	autocrlf = input
+	excludesfile = /home/tommy/.gitignore_global
+[alias]
+	lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	lg = !"git lg1"
+
