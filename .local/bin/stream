@@ -12,9 +12,10 @@ stream() {
   stations['psyradio * fm, 128k']='http://streamer.psyradio.org:8030/listen.pls'
   stations['BigUpRadio Dancehall']='http://yp.shoutcast.com/sbin/tunein-station.pls?id=201496'
 
-  PS3='Select stream: '
-  select STATION in "${!stations[@]}"; do
-    local cmd=$(printf "$cmd_format" "${stations[$STATION]}")
+  PS3='Select station: '
+  select station_name in "${!stations[@]}"; do
+    local station_url="${stations[$station_name]}"
+    local cmd=$(printf "$cmd_format" "$station_url")
     break
   done
 
