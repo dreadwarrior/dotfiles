@@ -1,0 +1,18 @@
+#!/bin/bash
+# -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-
+
+## Set dotfiles_dir to the directory containing the script
+## The ${var%pattern} format will remove the shortest match of
+## pattern from the end of the string. Here, it will remove the
+## script's name,. leaving only the directory.
+dotfiles_dir="${0%/*}"
+
+source "$dotfiles_dir/dotfiles-install/bash_git_prompt.sh"
+source "$dotfiles_dir/dotfiles-install/moka_icon_theme.sh"
+
+dotfiles_install() {
+  dotfiles_install::bash_git_prompt
+  dotfiles_install::moka_icon_theme_install
+}
+
+dotfiles_install
