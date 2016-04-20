@@ -1,0 +1,24 @@
+#!/bin/bash
+# -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-
+
+stream() {
+  local cmd_format="mplayer -playlist '%s'"
+  declare -A stations
+
+  stations['Bassdrive, 56k']='http://www.bassdrive.com/v2/streams/BassDrive6.pls'
+  stations['DNBRadio, 192k']='https://dnbradio.com/hi.pls'
+  stations['Jungletrain, 64k']='http://jungletrain.net/64kbps.m3u'
+  stations['Smooth Jazz Tampa, 128k']='http://sc1.mystreamserver.com:8132/listen.pls?sid=1&t=.pls'
+  stations['psyradio * fm, 128k']='http://streamer.psyradio.org:8030/listen.pls'
+  stations['BigUpRadio Dancehall']='http://yp.shoutcast.com/sbin/tunein-station.pls?id=201496'
+
+  PS3='Select stream: '
+  select STATION in "${!stations[@]}"; do
+    local cmd=$(printf "$cmd_format" "${stations[$STATION]}")
+    break
+  done
+
+  eval "$cmd"
+}
+
+stream "$@"
