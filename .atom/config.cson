@@ -13,3 +13,5 @@
     userId: "76d6bd0a-16fd-42b8-0163-bce5c8c7e379"
   welcome:
     showOnStartup: false
+  whitespace:
+    ensureSingleTrailingNewline: false
