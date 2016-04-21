@@ -53,12 +53,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+  # We have color support; assume it's compliant with Ecma-48
+  # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+  # a case would tend to support setf rather than setaf.)
+  color_prompt=yes
     else
-	color_prompt=
+  color_prompt=
     fi
 fi
 
@@ -126,21 +126,20 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [[ $- = *i* ]]; then
-  # Display matches for ambiguous patterns at first tab press
-  bind "set show-all-if-ambiguous on"
-  # cycle through possible completions
-  bind TAB:menu-complete
-  # shift+ctrl reverse-cycles through possible completions
-  bind '"\e[Z": "\e-1\C-i"'
+# Display matches for ambiguous patterns at first tab press
+bind "set show-all-if-ambiguous on"
+# cycle through possible completions
+bind TAB:menu-complete
+# shift+ctrl reverse-cycles through possible completions
+bind '"\e[Z": "\e-1\C-i"'
 
-  bind '"\e[1;5C": forward-word'
-  bind '"\e[1;5D": backward-word'
-  bind '"\e[5C": forward-word'
-  bind '"\e[5D": backward-word'
-  bind '"\e\e[C": forward-word'
-  bind '"\e\e[D": backward-word'
-fi
+# bind ctrl+cursor keys for moving between words on CLI
+bind '"\e[1;5C": forward-word'
+bind '"\e[1;5D": backward-word'
+bind '"\e[5C": forward-word'
+bind '"\e[5D": backward-word'
+bind '"\e\e[C": forward-word'
+bind '"\e\e[D": backward-word'
 
 GIT_PROMPT_ONLY_IN_REPO=1
 GIT_PROMPT_SHOW_UPSTREAM=1
