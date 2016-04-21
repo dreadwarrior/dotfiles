@@ -1,3 +1,6 @@
+# -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-
+# vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -10,7 +13,7 @@ esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-HISTCONTROL=ignoreboth
+HISTCONTROL="erasedups:ignoreboth"
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -18,6 +21,9 @@ shopt -s histappend
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
+
+# Don't record some commands
+export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -72,6 +78,22 @@ xterm*|rxvt*)
     ;;
 esac
 
+prompt_reset="\[\033[m\]"
+# bold + yellow
+prompt_user_color="\[\033[1;32m\]"
+# normal + white
+prompt_user_host_separator_color="\[\033[0;37m\]"
+# bold + blue
+prompt_host_color="\[\033[1;34m\]"
+# normal + default color
+prompt_host_dir_separator_color="\[\033[0;00m\]"
+# normal + white
+prompt_dir_color="\[\033[0;37m\]"
+# bold + default color
+prompt_symbol_color="\[\033[1;00m\]"
+
+PS1="${debian_chroot:+($debian_chroot)}${prompt_user_color}\u${prompt_user_host_separator_color}@${prompt_host_color}\h${prompt_host_dir_separator_color}:${prompt_dir_color}\w${prompt_symbol_color}\$${prompt_reset} "
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -83,12 +105,6 @@ if [ -x /usr/bin/dircolors ]; then
     #alias fgrep='fgrep --color=auto'
     #alias egrep='egrep --color=auto'
 fi
-
-# some more ls aliases
-alias ll='ls -lah'
-#alias la='ls -A'
-#alias l='ls -CF'
-alias llp='ll --color=always | grep --color=never'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -110,12 +126,21 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[1;34m\]\h\[\033[00m\]:\w\[\033[31m\]$(__git_ps1 " (%s) ")\[\033[00m\]\$ '
+if [[ $- = *i* ]]; then
+  # Display matches for ambiguous patterns at first tab press
+  bind "set show-all-if-ambiguous on"
+  # cycle through possible completions
+  bind TAB:menu-complete
+  # shift+ctrl reverse-cycles through possible completions
+  bind '"\e[Z": "\e-1\C-i"'
 
-PS1='${debian_chroot:+($debian_chroot)}\[\e[1;32m\]\u\[\e[0;37m\]@\[\e[1;34m\]\h\[\e[0;00m\]:\[\e[0;37m\]\w$(__git_ps1 "(%s) ")\[\e[1;00m\]\$ '
-
-# cycle through possible completions
-[[ $- = *i* ]] && bind TAB:menu-complete
+  bind '"\e[1;5C": forward-word'
+  bind '"\e[1;5D": backward-word'
+  bind '"\e[5C": forward-word'
+  bind '"\e[5D": backward-word'
+  bind '"\e\e[C": forward-word'
+  bind '"\e\e[D": backward-word'
+fi
 
 GIT_PROMPT_ONLY_IN_REPO=1
 GIT_PROMPT_SHOW_UPSTREAM=1
@@ -136,7 +161,4 @@ fi
 # add ./bin to path
 PATH="./bin:$PATH"
 
-#PROMPT_COMMAND="eval printf %.0s─ '{1..'\"${COLUMNS:-$(tput cols)}\"\}; echo"
-#PROMPT_COMMAND="printf '\e[1;35m%*s\e[m\n' "${COLUMNS:-$(tput cols)}" '' | sed 's/\s/─/g'"
-#export GDK_BACKEND='wayland,x11'
-
+export CDPATH="$HOME/workspace:$HOME/playground:$CDPATH"
