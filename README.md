@@ -7,12 +7,11 @@
 1. Minimal dependency footprint ([yadm][yadm] uses `git` and `bash`)
 2. **No** git submodules
 
-## Installation
+## Installation / setup
 
     ~$ sudo apt install yadm
     ~$ cd $HOME
-    ~$ yadm init .
-    ~$ yadm remote add origin git@github.com:dreadwarrior/dotfiles
+    ~$ yadm clone git@github.com:dreadwarrior/dotfiles
     ~$ source ~/.bashrc
     ~$ dotfiles_install
 
