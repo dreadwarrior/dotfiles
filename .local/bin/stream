@@ -21,7 +21,7 @@ stream() {
     break
   done
 
-  eval "$cmd"
+  bash -c "$cmd"
 }
 
 stream "$@"
