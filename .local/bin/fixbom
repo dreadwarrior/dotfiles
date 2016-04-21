@@ -11,37 +11,38 @@
 #
 # [1] https://wiki.typo3.org/ReST_Syntax#Structure_of_a_single_reST_file
 
-#__DIR__="`dirname \"$0\"`"
-#source ${__DIR__}/functions.sh
+fixbom() {
+	local filelist="${1:-`$(ls -R ./Documentation/*.rst ./Documentation/*/*.rst ./Documentation/*.txt)`}"
 
-while [[ $# -ge 1 ]]; do
-	key="$1"
-	shift
+	while [[ $# -ge 1 ]]; do
+		key="$1"
+		shift
 
-	case $key in
-		-d|--delete-only )
-			DELETE_ONLY=YES
-			shift
-		;;
-		* )
-			# unknown option
-		;;
-	esac
-done
+		case $key in
+			-d|--delete-only )
+				local delete_only=YES
+				shift
+			;;
+			* )
+				# unknown option
+			;;
+		esac
+	done
 
-FILELIST=$(ls -R ./Documentation/*.rst ./Documentation/*/*.rst ./Documentation/*.txt)
-
-for F in ${FILELIST}; do
-	if [[ -f $F && `head -c 3 $F` == $'\xef\xbb\xbf' ]]; then
+	for a_file in ${filelist}; do
 		# file exists and has UTF-8 BOM
-		mv $F $F.bak
-		tail -c +4 $F.bak > $F
-		rm -f $F.bak
-		echo "Removed BOM from $F"
-	fi
+		if [[ -f $a_file && `head -c 3 $a_file` == $'\xef\xbb\xbf' ]]; then
+			mv $a_file $a_file.bak
+			tail -c +4 $a_file.bak > $a_file
+			rm -f $a_file.bak
+			echo "Removed BOM from $a_file"
+		fi
 
-	if [[ "${DELETE_ONLY}" != YES ]]; then
-		sed -i '1s/^/\xef\xbb\xbf/' "$F"
-		echo "Re-applied BOM to ${F}"
-	fi
-done
+		if [[ "${delete_only}" != YES ]]; then
+			sed -i '1s/^/\xef\xbb\xbf/' "$a_file"
+			echo "Re-applied BOM to ${a_file}"
+		fi
+	done
+}
+
+fixbom "$@"

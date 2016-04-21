@@ -5,4 +5,8 @@
 #
 # Outputs the UNIX timestamp of the current date / time
 
-date +%s
+unixtime() {
+  date +%s
+}
+
+unixtime "$@"
