@@ -1,8 +1,16 @@
 #!/bin/bash
-
+#
 # -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-
 # vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:
+#
+# Replaces tabs to spaces. Uses current working dir if no path arguments was given.
+#
+# Usage: tabs_to_spaces [/path/to/dir]
 
-path=${1:-`pwd`}
+tabs_to_spaces() {
+  path=${1:-`pwd`}
 
-find $path -type f -exec sed -i.orig 's/\t/    /g' {} +
+  find $path -type f -exec sed -i.orig 's/\t/    /g' {} +
+}
+
+tabs_to_spaces "$@"

@@ -1,7 +1,15 @@
 #!/bin/bash
-
+#
 # -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-
 # vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:
+#
+# Removes or re-applies the Byte Order Mark (BOM) to a list of files
+#
+# This was implemented for TYPO3.CMS ReStructuredText documentation files.
+# The BOM is used by the documentation servers (see [1]) but not during
+# local development.
+#
+# [1] https://wiki.typo3.org/ReST_Syntax#Structure_of_a_single_reST_file
 
 #__DIR__="`dirname \"$0\"`"
 #source ${__DIR__}/functions.sh

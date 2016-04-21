@@ -1,7 +1,10 @@
 #!/bin/bash
-
+#
 # -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-
 # vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:
+#
+# Provides a list of shoutcast radio stations for user selection and executes
+# mplayer to stream the playlist of the selected station.
 
 stream() {
   local cmd_format="mplayer -playlist '%s'"

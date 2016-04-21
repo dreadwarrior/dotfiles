@@ -1,7 +1,9 @@
 #!/bin/bash
-
+#
 # -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-
 # vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:
+#
+# Installs the Faba and Moka icon themes into $HOME/.local/share/icons
 
 MOKA_TEMP_DIR="/tmp"
 
