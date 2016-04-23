@@ -13,3 +13,10 @@ alias vup='vagrant up'
 alias vsh='vagrant up && vagrant ssh'
 alias vha='vagrant halt'
 alias vrl='vagrant reload'
+
+# "docker machine up" - "docker machine down"
+# 
+alias dmu='docker-machine start'
+alias dmd='docker-machine stop'
+alias dme='docker-machine env'
+
