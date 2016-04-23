@@ -7,7 +7,7 @@
 
 docker_stop_rm() {
   local container_id="$1"
-  docker stop $conainer_id && docker rm $container_id
+  docker stop $container_id && docker rm $container_id
 }
 
 docker_stop_rm "$@"
