@@ -25,24 +25,26 @@ created if not existing.
 
 ### Other scripts
 
-  <dl>
-    <dt>**fixbom**</dt>
-    <dd>Removes and re-applies UTF-8 Byte Order Mark to a set of files.</dd>
-    <dt>**docker_stop_rm**</dt>
-    <dd>Stops and removes a docker container its id.</dd>
-    <dt>**ssl_inspect**</dt>
-    <dd>Outputs information about an (HTTP-)SSL certificate of a given hostname.</dd>
-    <dt>**status**</dt>
-    <dd>Work-in-progress script for printing out hardware information (battery, cpu, ...)</dd>
-    <dt>**stream**</dt>
-    <dd>Simple wrapper around `mplayer -playlist` for listening to shoutcast streams.</dd>
-    <dt>**tabs_to_spaces**</dt>
-    <dd>Converts tab indentation in files to spaces.</dd>
-    <dt>**unixtime**</dt>
-    <dd>Prints the current unix timestamp</dd>
-    <dt>**vagrant_vm_portmap**</dt>
-    <dd>Gives information about current port mappings of a vagrant powered virtual machine</dd>
-  </dl>
+<dl>
+  <dt>**docker_stop_rm**</dt>
+  <dd>Stops and removes a docker container its id.</dd>
+  <dt>**fixbom**</dt>
+  <dd>Removes and re-applies UTF-8 Byte Order Mark to a set of files.</dd>
+  <dt>**ls_conf_diff**</dt>
+  <dd>Lists configuration files which differs from the package versions.</dd>
+  <dt>**ssl_inspect**</dt>
+  <dd>Outputs information about an (HTTP-)SSL certificate of a given hostname.</dd>
+  <dt>**status**</dt>
+  <dd>Work-in-progress script for printing out hardware information (battery, cpu, ...)</dd>
+  <dt>**stream**</dt>
+  <dd>Simple wrapper around `mplayer -playlist` for listening to shoutcast streams.</dd>
+  <dt>**tabs_to_spaces**</dt>
+  <dd>Converts tab indentation in files to spaces.</dd>
+  <dt>**unixtime**</dt>
+  <dd>Prints the current unix timestamp</dd>
+  <dt>**vagrant_vm_portmap**</dt>
+  <dd>Gives information about current port mappings of a vagrant powered virtual machine</dd>
+</dl>
 
 ## Installation / setup
 

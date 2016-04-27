@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-
+# vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:
+#
+# Entry point for listing modified configuration files.
+
+## Set dotfiles_dir to the directory containing the script
+## The ${var%pattern} format will remove the shortest match of
+## pattern from the end of the string. Here, it will remove the
+## script's name,. leaving only the directory.
+lsconfdiff_dir="${0%/*}"
+
+source "$lsconfdiff_dir/ls-conf-diff/common.sh"
+source "$lsconfdiff_dir/ls-conf-diff/debian.sh"
+
+ls_conf_diff() {
+  local os=$(lsb_release -si)
+
+  if [[ "${os}" -eq "Debian" ]]; then
+    ls_conf_diff::debian "$@"
+  else
+    echo "Your distribution (${os}) is currently not supported."
+  fi
+}
+
+ls_conf_diff "$@"
+
