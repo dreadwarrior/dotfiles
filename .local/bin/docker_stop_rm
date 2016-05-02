@@ -1,8 +1,8 @@
-#!/bin/bash                                                                              
-#¶                                                                      
-# -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-¶ 
-# vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:¶  
-#¶                                                                      
+#!/usr/bin/env bash
+#¶
+# -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-¶
+# vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:¶
+#¶
 # Stops and removes the given container id
 
 docker_stop_rm() {
