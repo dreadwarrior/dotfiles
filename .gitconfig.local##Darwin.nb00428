@@ -1,0 +1,7 @@
+[user]
+	name = Thomas Juhnke\n
+	email = tjuhnke@mcfit.com
+
+[core]
+	excludesfile = /Users/tjuhnke/.gitignore_global
+

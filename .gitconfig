@@ -6,9 +6,7 @@
 	file-view-vpane-position = 230
 	show-graph = true
 	file-view-hpane-position = 395
-[user]
-	name = Thomas Juhnke\n
-	email = tommy@van-tomas.de
+
 [color]
 	ui = true
 [core]
@@ -24,8 +22,10 @@
 [core]
 	editor = vi
 	autocrlf = input
-	excludesfile = /home/tommy/.gitignore_global
 [alias]
 	lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
 	lg = !"git lg1"
+[include]
+	path = .gitconfig.local
+
