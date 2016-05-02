@@ -1,6 +1,6 @@
 [user]
 	name = Thomas Juhnke\n
-	email = tjuhnke@mcfit.com
+	email = juhnke@mcfit.com
 
 [core]
 	excludesfile = /Users/tjuhnke/.gitignore_global
