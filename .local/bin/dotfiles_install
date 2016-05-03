@@ -12,12 +12,24 @@
 ## script's name,. leaving only the directory.
 dotfiles_dir="${0%/*}"
 
+system_type=$(uname -s)
+
 source "$dotfiles_dir/dotfiles-install/bash_git_prompt.sh"
 source "$dotfiles_dir/dotfiles-install/moka_icon_theme.sh"
+source "$dotfiles_dir/dotfiles-install/darwin_finder_show_dotfiles.sh"
+source "$dotfiles_dir/dotfiles-install/darwin_brew_packages.sh"
 
 dotfiles_install() {
   dotfiles_install::bash_git_prompt
-  dotfiles_install::moka_icon_theme_install
+
+  if [ "$system_type" != "Darwin" ]; then
+    dotfiles_install::moka_icon_theme_install
+  fi
+
+  if [ "$system_type" = "Darwin" ]; then
+    dotfiles_install::darwin_brew_packages
+    dotfiles_install::darwin_finder_show_dotfiles
+  fi
 }
 
 dotfiles_install

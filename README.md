@@ -23,6 +23,13 @@ of the Faba icon theme][faba_icon_theme_install]. The [Faba Mono][faba_mono_icon
 and [Moka][moka_icon_theme] icon themes are copied to `.local/share/icons`. This path is
 created if not existing.
 
+On MacOS hosts, the `dotfiles_install` will also show hidden files in finder
+and installs some necessary [brew][brew] packages:
+
+  * mplayer
+  * git
+  * bash-completion
+
 ### Other scripts
 
 <dl>
@@ -48,7 +55,24 @@ created if not existing.
 
 ## Installation / setup
 
+### Linux
+
     ~$ sudo apt install yadm
+    ~$ cd $HOME
+    ~$ yadm clone git@github.com:dreadwarrior/dotfiles
+    ~$ source ~/.bashrc
+    ~$ dotfiles_install
+
+### MacOS
+
+    # Install Homebrew + yadm
+    ~$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    ~$ brew install yadm
+    # Update bash
+    ~$ brew install bash
+    ~$ sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
+    ~$ chsh -s /usr/local/bin/bash
+    # same as in Linux...
     ~$ cd $HOME
     ~$ yadm clone git@github.com:dreadwarrior/dotfiles
     ~$ source ~/.bashrc
@@ -63,6 +87,12 @@ created if not existing.
      - .local/share/telepathy/mission-control/{accounts,accounts-goa}.cfg
      - .ssh/*
      - .gnupg/*
+  2. Integrate global system name probing (`uname -s`), individual usage by `dotfiles-install/*` scripts
+
+## Links / Notes
+
+  - [Upgrade to bash 4 in Mac OS X](http://clubmate.fi/upgrade-to-bash-4-in-mac-os-x/)
+  - `⌘ CMD`+`⇧ SHIFT`+`.` Reveals hidden files in Open/Save dialogs on Mac OS
 
 [yadm]: https://github.com/TheLocehiliosan/yadm
 [bash_git_prompt]: https://github.com/magicmonty/bash-git-prompt
@@ -70,3 +100,5 @@ created if not existing.
 [faba_icon_theme]: https://github.com/moka-project/faba-icon-theme
 [faba_icon_theme_install]: https://github.com/moka-project/faba-icon-theme/blob/master/install-icon-theme.sh
 [faba_mono_icon_theme]: https://github.com/moka-project/faba-mono-icons
+[brew]: http://brew.sh/
+
