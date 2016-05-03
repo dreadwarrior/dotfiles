@@ -21,3 +21,7 @@ alias dmd='docker-machine stop'
 alias dme='docker-machine env'
 alias dob='docker build -t'
 
+# "Watch log"
+#
+alias wlog='less +F'
+
