@@ -11,5 +11,6 @@ dotfiles_install::darwin_brew_packages() {
   brew install mplayer
   brew install git
   brew install bash-completion
+  brew install ssh-copy-id
 }
 
