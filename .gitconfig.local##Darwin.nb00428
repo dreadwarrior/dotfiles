@@ -5,3 +5,6 @@
 [core]
 	excludesfile = /Users/tjuhnke/.gitignore_global
 
+[credential]
+	helper = osxkeychain
+
