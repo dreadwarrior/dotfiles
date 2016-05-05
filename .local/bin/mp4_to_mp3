@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#¶
+# -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-¶
+# vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:¶
+#¶
+# Extracts the audio track of a MP4 video (mp3, bitrate: 192kb)
+
+mp4_to_mp3() {
+  local video="${1}"
+  local audio="${video/%mp4/mp3}"
+
+  echo "Converting ${video} to ${audio}"
+
+  ffmpeg -i "${video}" -f mp3 -ab 192000 -vn "${audio}"
+}
+
+mp4_to_mp3 "$@"
+
