@@ -1,6 +1,8 @@
 # -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-
 # vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:
 
+alias fuck='sudo $(history -p \!\!)'
+
 alias ll='ls -lah'
 alias llp='ll --color=always | grep --color=never'
 
