@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#¶
+# -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-¶
+# vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:¶
+#¶
+# Shows IP routes via various commands
+
+show_routes() {
+  if which netstat; then
+    netstat -rn
+  fi
+
+  if which ip; then
+    ip route list
+  fi
+}
+
+show_routes "$@"
+
