@@ -16,7 +16,7 @@ system_type=$(uname -s)
 
 source "$dotfiles_dir/dotfiles-install/bash_git_prompt.sh"
 source "$dotfiles_dir/dotfiles-install/moka_icon_theme.sh"
-source "$dotfiles_dir/dotfiles-install/darwin_finder_show_dotfiles.sh"
+source "$dotfiles_dir/dotfiles-install/darwin_finder.sh"
 source "$dotfiles_dir/dotfiles-install/darwin_brew_packages.sh"
 
 dotfiles_install() {
@@ -28,8 +28,9 @@ dotfiles_install() {
 
   if [ "$system_type" = "Darwin" ]; then
     dotfiles_install::darwin_brew_packages
-    dotfiles_install::darwin_finder_show_dotfiles
+    dotfiles_install::darwin_finder
   fi
 }
 
 dotfiles_install
+

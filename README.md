@@ -23,35 +23,59 @@ of the Faba icon theme][faba_icon_theme_install]. The [Faba Mono][faba_mono_icon
 and [Moka][moka_icon_theme] icon themes are copied to `.local/share/icons`. This path is
 created if not existing.
 
-On MacOS hosts, the `dotfiles_install` will also show hidden files in finder
+On MacOS hosts, the `dotfiles_install` will also performs some adjustments for the Finder
 and installs some necessary [brew][brew] packages:
 
   * mplayer
   * git
   * bash-completion
+  * ssh-copy-id
 
 ### Other scripts
 
-<dl>
-  <dt>docker_stop_rm</dt>
-  <dd>Stops and removes a docker container its id.</dd>
-  <dt>fixbom</dt>
-  <dd>Removes and re-applies UTF-8 Byte Order Mark to a set of files.</dd>
-  <dt>ls_conf_diff</dt>
-  <dd>Lists configuration files which differs from the package versions.</dd>
-  <dt>ssl_inspect</dt>
-  <dd>Outputs information about an (HTTP-)SSL certificate of a given hostname.</dd>
-  <dt>status</dt>
-  <dd>Work-in-progress script for printing out hardware information (battery, cpu, ...)</dd>
-  <dt>stream</dt>
-  <dd>Simple wrapper around `mplayer -playlist` for listening to shoutcast streams.</dd>
-  <dt>tabs_to_spaces</dt>
-  <dd>Converts tab indentation in files to spaces.</dd>
-  <dt>unixtime</dt>
-  <dd>Prints the current unix timestamp</dd>
-  <dt>vagrant_vm_portmap</dt>
-  <dd>Gives information about current port mappings of a vagrant powered virtual machine</dd>
-</dl>
+  * **docker_stop_rm**
+
+    *Stops and removes a docker container by its id.*
+
+  * **fixbom**
+
+    *Removes and re-applies UTF-8 Byte Order Mark to a set of files.*
+
+  * **ls_conf_diff**
+
+    *Lists configuration files which differs from the package versions.*
+
+  * **mp4_to_mp3**
+
+    *Extracts the audio track of a MP4 video (MP3, 192kbps)*
+
+  * **show_routes**
+
+    *Probes and uses different commands for routing table introspection*
+
+  * **ssl_inspect**
+
+    *Outputs information about an (HTTP-)SSL certificate of a given hostname.*
+
+  * **status**
+
+    *Work-in-progress script for printing out hardware information (battery, cpu, ...)*
+
+  * **stream**
+
+    *Simple wrapper around `mplayer -playlist` for listening to shoutcast streams.*
+
+  * **tabs_to_spaces**
+
+    *Converts tab indentation in files to spaces.*
+
+  * **unixtime**
+
+    *Prints the current unix timestamp*
+
+  * **vagrant_vm_portmap**
+
+    *Gives information about current port mappings of a vagrant powered virtual machine*
 
 ## Installation / setup
 
@@ -94,6 +118,10 @@ and installs some necessary [brew][brew] packages:
   - [Upgrade to bash 4 in Mac OS X](http://clubmate.fi/upgrade-to-bash-4-in-mac-os-x/)
   - `⌘ CMD`+`⇧ SHIFT`+`.` Reveals hidden files in Open/Save dialogs on Mac OS
 
+### Useful Darwin applications
+
+  - [Fugu - a free sFTP, SCP and SSH frontend][fugu]
+
 [yadm]: https://github.com/TheLocehiliosan/yadm
 [bash_git_prompt]: https://github.com/magicmonty/bash-git-prompt
 [moka_icon_theme]: https://github.com/moka-project/moka-icon-theme
@@ -101,4 +129,5 @@ and installs some necessary [brew][brew] packages:
 [faba_icon_theme_install]: https://github.com/moka-project/faba-icon-theme/blob/master/install-icon-theme.sh
 [faba_mono_icon_theme]: https://github.com/moka-project/faba-mono-icons
 [brew]: http://brew.sh/
+[fugu]: http://rsug.itd.umich.edu/software/fugu/
 
