@@ -166,7 +166,8 @@ export CDPATH="$HOME/workspace:$HOME/playground:$CDPATH"
 env x='() { :;}; echo "WARNING: SHELLSHOCK DETECTED"' bash --norc -c ':' 2>/dev/null;
 
 # Bash completion for Mac
-if [ -f `brew --prefix`/etc/bash_completion ]; then
+# Check if brew is available (@see http://stackoverflow.com/a/677212)
+if [ hash brew 2>/dev/null && -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi
 
