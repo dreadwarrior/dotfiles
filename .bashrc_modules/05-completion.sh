@@ -14,7 +14,7 @@ fi
 
 # Bash completion for Mac
 # Check if brew is available (@see http://stackoverflow.com/a/677212)
-if [ type brew 2>/dev/null && -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
+if [[ "`type brew 2>/dev/null`" && -f `brew --prefix`/etc/bash_completion ]]; then
+  . `brew --prefix`/etc/bash_completion
 fi
 
