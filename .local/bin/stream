@@ -16,6 +16,7 @@ stream() {
   stations['Smooth Jazz Tampa, 128k']='http://sc1.mystreamserver.com:8132/listen.pls?sid=1&t=.pls'
   stations['psyradio * fm, 128k']='http://streamer.psyradio.org:8030/listen.pls'
   stations['BigUpRadio Dancehall']='http://yp.shoutcast.com/sbin/tunein-station.pls?id=201496'
+  stations['DRIVE Radio - The Original Synthwave Radio Since 2012']='http://driveradio.be/ondesktop/drive.m3u'
 
   PS3='Select station: '
   select station_name in "${!stations[@]}"; do
