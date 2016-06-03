@@ -18,6 +18,10 @@ source $HOME/.bashrc_modules/03-readline.sh
 source $HOME/.bashrc_modules/04-paths.sh
 source $HOME/.bashrc_modules/05-completion.sh
 
+if [ -f $HOME/.bashrc_modules/06-token.sh ]; then
+  source $HOME/.bashrc_modules/06-token.sh
+fi
+
 # make less more friendly for non-text input files, see lesspipe(1)
 #[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
