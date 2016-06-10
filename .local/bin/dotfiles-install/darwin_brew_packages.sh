@@ -8,9 +8,9 @@
 dotfiles_install::darwin_brew_packages() {
   brew analytics off
 
-  brew install mplayer
-  brew install git
   brew install bash-completion
+  brew install git
+  brew install mplayer
   brew install ssh-copy-id
 }
 

@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#
+# -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-
+# vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:
+#
+# Installs some tools via brew
+
+system_type=$(uname -s)
+
+if [ "$system_type" != "Darwin" ]; then
+  echo 'You\'re not on Mac OS X.'
+fi
+
+if [[ ! "`type brew 2>/dev/null`" ]]; then
+  echo 'You\re not using Homebrew. Please install it first.'
+fi
+
+
+brew install git-flow
+brew install jq
+brew tap nishanths/tap && brew install license
+brew install md5sha1sum
+brew install nyancat
+brew install watch
+brew install youtube-dl
+

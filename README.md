@@ -26,12 +26,16 @@ created if not existing.
 On MacOS hosts, the `dotfiles_install` will also performs some adjustments for the Finder
 and installs some necessary [brew][brew] packages:
 
-  * mplayer
-  * git
   * bash-completion
+  * git
+  * mplayer
   * ssh-copy-id
 
 ### Other scripts
+
+  * **brew_tools_install**
+
+    *Installs some more tools with Homebrew on Mac OS X*
 
   * **docker_stop_rm**
 
@@ -92,11 +96,13 @@ and installs some necessary [brew][brew] packages:
     # Install Homebrew + yadm
     ~$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     ~$ brew install yadm
+
     # Update bash
     ~$ brew install bash
     ~$ sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
     ~$ chsh -s /usr/local/bin/bash
-    # same as in Linux...
+
+    # same as on Linux:
     ~$ cd $HOME
     ~$ yadm clone git@github.com:dreadwarrior/dotfiles
     ~$ source ~/.bashrc
@@ -108,15 +114,14 @@ and installs some necessary [brew][brew] packages:
 
      - .local/share/gtg/{gtg_tasks,projects,tags}.xml
      - .local/share/gnome-shell/extensions
-     - .local/share/telepathy/mission-control/{accounts,accounts-goa}.cfg
-     - .ssh/*
-     - .gnupg/*
+
   2. Integrate global system name probing (`uname -s`), individual usage by `dotfiles-install/*` scripts
 
 ## Links / Notes
 
   - [Upgrade to bash 4 in Mac OS X](http://clubmate.fi/upgrade-to-bash-4-in-mac-os-x/)
   - `⌘ CMD`+`⇧ SHIFT`+`.` Reveals hidden files in Open/Save dialogs on Mac OS
+  - [Spring-Cleaning Homebrew Dependencies](http://patricklenz.co/blog/2012/5/21/spring-cleaning-homebrew-dependencies)
 
 ### Useful Darwin applications
 
