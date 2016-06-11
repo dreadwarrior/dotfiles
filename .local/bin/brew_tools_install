@@ -8,11 +8,13 @@
 system_type=$(uname -s)
 
 if [ "$system_type" != "Darwin" ]; then
-  echo 'You\'re not on Mac OS X.'
+  echo 'You'"'"'re not on Mac OS X.'
+  exit 1
 fi
 
 if [[ ! "`type brew 2>/dev/null`" ]]; then
-  echo 'You\re not using Homebrew. Please install it first.'
+  echo 'You'"'"'re not using Homebrew. Please install it first.'
+  exit 1
 fi
 
 
