@@ -10,8 +10,8 @@
 
 set -e
 
-DIST="`uname -a`"
-PLATFORM="`uname -s`-`uname -m`"
+DIST="$(uname -a)"
+PLATFORM="$(uname -s)-$(uname -m)"
 
 DIST_CODENAME="jessie"
 COMPOSE_VERSION="1.6.2"
@@ -23,30 +23,39 @@ if test "${DIST#*'Debian'}" != "${DIST}"; then
 fi
 
 usage() {
-echo "
-Usage: docker_install [Arguments]
+  local fgWhite="\033[0;37m"
+  local clrReset="\033[m"
 
-Purpose:
+  echo "
+${fgWhite}OVERVIEW${clrReset}
 
-Installs the docker, docker-compose and docker-machine binaries to a Debian Linux
-system without using the package management binaries.
+        ${fgWhite}docker_install [arguments]${clrReset}
 
-Arguments:
+${fgWhite}DESCRIPTION${clrReset}
 
-  --help, -h
-    Show this help screen.
+        Installs the docker, docker-compose and docker-machine binaries to a
+        Debian Linux system without using the package management binaries.
 
-  --dist-name, -d
-    Name of the distribution, e.g. "jessie".
+${fgWhite}ARGUMENTS${clrReset}
 
-  --compose-version, -c
-    Semver tag of the docker-machine version to install.
+        --help, -h
+                Show this help screen.
 
-  --machine-version, -m
-    Semver tag of the docker compose version to install.
+        --dist-name, -d
+                Name of the distribution, e.g. \"jessie\".
 
-  --uninstall, -u
-    Uninstalls the tool chain.
+        --compose-version, -c
+                Semver tag of the docker-machine version to install, e.g. \"1.6.2\"
+
+        --machine-version, -m
+                Semver tag of the docker compose version to install, e.g. \"v0.8.0-rc1\"
+
+        --uninstall, -u
+                Uninstalls the tool chain.
+
+${fgWhite}AUTHORS / CONTRIBUTORS${clrReset}
+
+        Thomas Juhnke <dev@van-tomas.de>
 "
 }
 
@@ -57,14 +66,14 @@ uninstall() {
 
     echo "==> Uninstalling packages, remove docker files."
     apt-get -y purge docker-engine
-    apt-get -y autoremove--purge docker-engine
+    apt-get -y autoremove --purge docker-engine
     rm -rf /var/lib/docker
 
     echo "==> Removing apt-key."
     apt-key del 58118E89F3A912897C070ADBF76221572C52609D
 
     echo "==> Removing source.list.d file."
-    rm -f /etc/apt/source.list.d/docker.list
+    rm -f /etc/apt/sources.list.d/docker.list
 EOF
 
   echo "==> Removing machine and compose."
@@ -121,8 +130,8 @@ github_download() {
   local uri="https://github.com/docker/${tool}/releases/download/${version}/docker-${tool}-${platform}"
   local outputFile="${localTargetDirectory}/docker-${tool}"
 
-  curl -L ${uri} > ${outputFile}
-  chmod u+x ${localTargetDirectory}/docker-${tool}
+  curl -L "${uri}" > "${outputFile}"
+  chmod u+x "${localTargetDirectory}"/docker-"${tool}"
 }
 
 install_engine
