@@ -1,0 +1,135 @@
+#!/bin/sh
+#
+# -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-
+# vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:
+#
+# Installs docker engine, compose and machine
+# @see https://docs.docker.com/engine/installation/linux/debian/
+#
+# NOTE: Currently only Debian Linux is supported
+
+set -e
+
+DIST="`uname -a`"
+PLATFORM="`uname -s`-`uname -m`"
+
+DIST_CODENAME="jessie"
+COMPOSE_VERSION="1.6.2"
+MACHINE_VERSION="v0.8.0-rc1"
+
+if test "${DIST#*'Debian'}" != "${DIST}"; then
+  echo "Docker installation is currently only supported on Debian Linux."
+  exit 1
+fi
+
+usage() {
+echo "
+Usage: docker_install [Arguments]
+
+Purpose:
+
+Installs the docker, docker-compose and docker-machine binaries to a Debian Linux
+system without using the package management binaries.
+
+Arguments:
+
+  --help, -h
+    Show this help screen.
+
+  --dist-name, -d
+    Name of the distribution, e.g. "jessie".
+
+  --compose-version, -c
+    Semver tag of the docker-machine version to install.
+
+  --machine-version, -m
+    Semver tag of the docker compose version to install.
+
+  --uninstall, -u
+    Uninstalls the tool chain.
+"
+}
+
+uninstall() {
+  sudo -i <<EOF
+    echo "==> Stopping docker engine."
+    service docker stop
+
+    echo "==> Uninstalling packages, remove docker files."
+    apt-get -y purge docker-engine
+    apt-get -y autoremove--purge docker-engine
+    rm -rf /var/lib/docker
+
+    echo "==> Removing apt-key."
+    apt-key del 58118E89F3A912897C070ADBF76221572C52609D
+
+    echo "==> Removing source.list.d file."
+    rm -f /etc/apt/source.list.d/docker.list
+EOF
+
+  echo "==> Removing machine and compose."
+  rm -f "$HOME/.local/bin/docker-machine"
+  rm -f "$HOME/.local/bin/docker-compose"
+}
+
+while [ $# -gt 0 ]
+do
+  case "$1" in
+    --dist-name | -d) DIST_CODENAME="$2"; shift;;
+    --compose-version | -c) COMPOSE_VERSION="$2"; shift;;
+    --machine-version | -m) MACHINE_VERSION="$2"; shift;;
+    --uninstall | -u)
+      uninstall
+      exit 1;;
+    -* | --help | -h)
+      usage
+      exit 1;;
+    *) break;;
+  esac
+  shift
+done
+
+install_engine() {
+  sudo -i <<EOF
+    echo "==> Cleaning up."
+    apt-get purge lxc-docker*
+    apt-get purge docker.io*
+
+    echo "==> Updating package information, ensure that APT works with the https method, and that CA certificates are installed."
+    apt-get update
+    apt-get -y install apt-transport-https ca-certificates
+
+    echo "==> Adding the new GPG key."
+    apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+
+    echo "==> Adding sources.list.d file for docker."
+    echo "deb https://apt.dockerproject.org/repo debian-${DIST_CODENAME} main" > /etc/apt/sources.list.d/docker.list
+
+    echo "==> Updating package cache, install docker-engine and start the docker service."
+    apt-get update
+    apt-get -y install docker-engine
+    service docker start
+EOF
+}
+
+github_download() {
+  local tool="$1"
+  local version="$2"
+  local platform="$3"
+  local localTargetDirectory="$4"
+
+  local uri="https://github.com/docker/${tool}/releases/download/${version}/docker-${tool}-${platform}"
+  local outputFile="${localTargetDirectory}/docker-${tool}"
+
+  curl -L ${uri} > ${outputFile}
+  chmod u+x ${localTargetDirectory}/docker-${tool}
+}
+
+install_engine
+
+echo "==> Installing docker-compose..."
+github_download "compose" "${COMPOSE_VERSION}" "${PLATFORM}" "${HOME}/.local/bin"
+
+echo "==> Installing docker-machine..."
+github_download "machine" "${MACHINE_VERSION}" "${PLATFORM}" "${HOME}/.local/bin"
+
