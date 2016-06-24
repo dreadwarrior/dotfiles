@@ -10,8 +10,8 @@ set -e
 REPOSITORY="${1:-'<none>'}"
 
 usage() {
-  local fgWhite="\033[0;37m"
-  local clrReset="\033[m"
+  fgWhite="\033[0;37m"
+  clrReset="\033[m"
 
   echo "
 ${fgWhite}OVERVIEW${clrReset}
@@ -29,7 +29,7 @@ ${fgWhite}DESCRIPTION${clrReset}
         The name gets prependend with a regular expression \"start of line\"
         meta character:
 
-        ~\$ ${fgWhite}docker_rmi "nginx"${clrReset}
+        ~\$ ${fgWhite}docker_rmi \"nginx\"${clrReset}
 
         Will result in removing all images with this values in their
         \"Repository\" column:
@@ -54,9 +54,8 @@ do
       exit 1;;
     *) break;;
   esac
-  shift
 done
 
 echo "==> Removing docker images..."
-docker rmi $(docker images | grep "^${REPOSITORY}" | awk '{print $3}')
+docker rmi "$(docker images | grep "^${REPOSITORY}" | awk '{print $3}')"
 
