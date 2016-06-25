@@ -64,6 +64,9 @@ uninstall() {
     echo "==> Stopping docker engine."
     service docker stop
 
+    echo "==> Removing ${USER} from the docker group."
+    gpasswd -d ${USER} docker
+
     echo "==> Uninstalling packages, remove docker files."
     apt-get -y purge docker-engine
     apt-get -y autoremove --purge docker-engine
@@ -118,6 +121,9 @@ install_engine() {
     apt-get update
     apt-get -y install docker-engine
     service docker start
+
+    echo "==> Adding ${USER} to the docker group. Please logout and login after installation."
+    gpasswd -a ${USER} docker
 EOF
 }
 
