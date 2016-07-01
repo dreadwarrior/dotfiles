@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+#
+# -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-
+# vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:
+#
+# SSH Key Discovery - needs bash for arrays
+
+# TODOs:
+#   - check use case for `-f` param of `ssh-keyscan`
+#   - review http://www.dopefish.de/archives/702
+
+set -e
+
+if [ -z "${1}" ]; then
+  echo "
+USAGE
+
+    [MODE=<hostname | ip>] $(basename "${0}") \"<hostname_or_ip_1> <hostname_or_ip_2>...<hostname_or_ip_N>\"
+
+DESCRIPTION
+
+    Discovers and SSH host to prevent \"Host key verification failed.\" errors during
+    automatic SSH command executions without human interaction.
+
+    It removes and (re-)adds the discovered hosts to the ~/.ssh/known_hosts file
+    of the executing user.
+  "
+  exit 0
+fi
+
+MODE="${MODE:-hostname}"
+SERVER_LIST=( "$1" )
+
+echo "Probing SSH Servers for updating known_hosts file. (mode: ${MODE})"
+
+for hostname_or_ip in ${SERVER_LIST[*]}; do
+    if [ "${MODE}" = "hostname" ]; then
+      ip=$(dig +short "${hostname_or_ip}")
+      hostname="${hostname_or_ip}"
+    else
+      ip="${hostname_or_ip}"
+      hostname="$(host "${ip}" | awk '{print $5}' | rev | cut -c 2- | rev)"
+    fi
+
+    echo "Update known_hosts for ${hostname} with IP ${ip}"
+
+    ssh-keygen -R "${hostname}"
+    ssh-keygen -R "${ip}"
+    ssh-keygen -R "${hostname}","${ip}"
+
+    {
+      ssh-keyscan -t rsa,dsa -H "${hostname}","${ip}";
+      ssh-keyscan -t rsa,dsa -H "${ip}";
+      ssh-keyscan -t rsa,dsa -H "${hostname}";
+    } >> ~/.ssh/known_hosts
+done
