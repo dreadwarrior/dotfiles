@@ -37,7 +37,7 @@ alias dmu='docker-machine start'
 alias dmd='docker-machine stop'
 alias dme='docker-machine env'
 alias dob='docker build -t'
-
+alias docker_inspect_mounts='docker inspect --format '"'"'{{ .Mounts }}'"'"''
 # "Watch log"
 #
 alias wlog='less +F'
