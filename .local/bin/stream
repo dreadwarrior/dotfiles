@@ -11,7 +11,7 @@ stream() {
   declare -A stations
 
   stations['Bassdrive, 56k']='http://www.bassdrive.com/v2/streams/BassDrive6.pls'
-  stations['DNBRadio, 192k']='https://dnbradio.com/hi.pls'
+  stations['DNBRadio, 192k']='http://dnbradio.com/hi.m3u'
   stations['Jungletrain, 64k']='http://jungletrain.net/64kbps.m3u'
   stations['Smooth Jazz Tampa, 128k']='http://sc1.mystreamserver.com:8132/listen.pls?sid=1&t=.pls'
   stations['psyradio * fm, 128k']='http://streamer.psyradio.org:8030/listen.pls'
