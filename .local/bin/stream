@@ -9,19 +9,36 @@
 stream() {
   local cmd_format="mplayer -playlist '%s'"
   declare -A stations
+  declare -a ordered_stations
 
-  stations['Bassdrive, 56k']='http://www.bassdrive.com/v2/streams/BassDrive6.pls'
+  stations['Bassdrive, 56k']='http://bassdrive.com/bassdrive.m3u'
+  ordered_stations+=("Bassdrive, 56k")
+
   stations['DNBRadio, 192k']='http://dnbradio.com/hi.m3u'
+  ordered_stations+=("DNBRadio, 192k")
+
   stations['Jungletrain, 64k']='http://jungletrain.net/64kbps.m3u'
+  ordered_stations+=("Jungletrain, 64k")
+
   stations['Smooth Jazz Tampa, 128k']='http://sc1.mystreamserver.com:8132/listen.pls?sid=1&t=.pls'
+  ordered_stations+=("Smooth Jazz Tampa, 128k")
+
   stations['psyradio * fm, 128k']='http://streamer.psyradio.org:8030/listen.pls'
+  ordered_stations+=("psyradio * fm, 128k")
+
   stations['BigUpRadio Dancehall']='http://yp.shoutcast.com/sbin/tunein-station.pls?id=201496'
+  ordered_stations+=("BigUpRadio Dancehall")
+
   stations['DRIVE Radio - The Original Synthwave Radio Since 2012']='http://driveradio.be/ondesktop/drive.m3u'
+  ordered_stations+=("DRIVE Radio - The Original Synthwave Radio Since 2012")
 
   PS3='Select station: '
-  select station_name in "${!stations[@]}"; do
+  select station_name in "${ordered_stations[@]}"; do
     local station_url="${stations[$station_name]}"
     local cmd=$(printf "$cmd_format" "$station_url")
+
+    echo "==> Player command: ${cmd}"
+
     break
   done
 
