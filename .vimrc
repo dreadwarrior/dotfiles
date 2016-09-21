@@ -62,3 +62,7 @@ set cc=72
 
 " Add underline to the current line
 set cursorline
+
+" Push the file through sudo tee to the current filename (%)
+" You trigger it by doing :w!!
+cmap w!! %!sudo tee > /dev/null %

@@ -43,3 +43,5 @@ alias docker_inspect_mounts='docker inspect --format '"'"'{{ .Mounts }}'"'"''
 #
 alias wlog='less +F'
 
+alias hosts='vim /etc/hosts'
+
