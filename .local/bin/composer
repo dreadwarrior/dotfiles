@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ -z "${USE_LOCAL}" ]; then
+  echo "Set the USE_LOCAL environment file in order to use the host composer binary."
+  exit 1
+fi
+
+export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
+echo "Current working directory: '"$(pwd)"'"
+# docker run --rm -v $(pwd):/app -v ~/.ssh:/root/.ssh composer/composer $@
+docker run --rm -v $(pwd):/app composer/composer:alpine $@
+
