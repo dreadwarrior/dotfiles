@@ -1,0 +1,50 @@
+#!/bin/sh
+#
+# -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-
+# vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:
+#
+# Converts a bare git repository into a working copy
+#
+# @see http://stackoverflow.com/a/10637882
+
+nb_of_commits=$(git rev-list --count HEAD)
+is_bare_repository=$(git config --local --bool core.bare)
+
+git_bare_to_normal__ask_user() {
+  while true; do
+    echo "ATTENTION: There are ${nb_of_commits} commits in this bare repository."
+    echo "The operation was only tested with a 1-commit repository."
+    echo "This operation may be destructive."
+    echo
+    echo "Are you sure you want to proceed? [yes / no]"
+
+    read -r
+
+    case $REPLY in
+        [Nn][Oo])
+            echo "Aborting conversion."
+            exit 0;;
+        [Yy][Ee][Ss])
+            break;;
+        *)
+            continue;;
+    esac
+  done
+}
+
+if [ "$is_bare_repository" != "true" ]; then
+  echo "This is not a bare repository."
+  exit 1
+fi
+
+if [ "$nb_of_commits" -gt "1" ]; then
+  git_bare_to_normal__ask_user
+fi
+
+mkdir .git
+mv HEAD branches config description hooks/ info/ objects/ refs/ .git/
+git config --local --bool core.bare false
+git checkout master # or: git reset --hard
+
+echo "==> Done"
+
