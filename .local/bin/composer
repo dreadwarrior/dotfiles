@@ -1,12 +1,40 @@
 #!/bin/sh
+#
+# -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-
+# vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:
+#
+# Runs the composer binary through docker with a cache volume
+#
+# @TODO
+# - .ssh directory mounting (key name) - for private repositories
+# - global composer auth.json mounting
+
+CACHE_VOLUME=composer-cache
+COMPOSER_VERSION=1.1-alpine
 
 if [ -z "${USE_LOCAL}" ]; then
   echo "Set the USE_LOCAL environment file in order to use the host composer binary."
   exit 1
 fi
 
+echo_info() {
+  echo "[i] $1"
+}
+
+if ! docker volume inspect "${CACHE_VOLUME}" 1>/dev/null 2>/dev/null; then
+  docker volume create --name "${CACHE_VOLUME}"
+else
+  echo_info "composer cache volume '${CACHE_VOLUME}' already exists."
+fi
+
 export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
-echo "Current working directory: '"$(pwd)"'"
+echo_info "Current working directory: '"$(pwd)"'"
+
 # docker run --rm -v $(pwd):/app -v ~/.ssh:/root/.ssh composer/composer $@
-docker run --rm -v $(pwd):/app composer/composer:alpine $@
+docker run \
+  --rm \
+  -v "${CACHE_VOLUME}":/composer/cache \
+  -v $(pwd):/app \
+  composer/composer:"${COMPOSER_VERSION}" \
+  $@
 
