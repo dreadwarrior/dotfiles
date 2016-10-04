@@ -20,6 +20,9 @@ stream() {
   stations['Jungletrain, 64k']='http://jungletrain.net/64kbps.m3u'
   ordered_stations+=("Jungletrain, 64k")
 
+  stations['WEFUNK Radio - raw uncut funk . class \& underground hip-hop']='http://yp.shoutcast.com/sbin/tunein-station.m3u?id=1338495'
+  ordered_stations+=("WEFUNK Radio - raw uncut funk . class \& underground hip-hop")
+
   stations['psyradio * fm, 128k']='http://streamer.psyradio.org:8030/listen.pls'
   ordered_stations+=("psyradio * fm, 128k")
 
