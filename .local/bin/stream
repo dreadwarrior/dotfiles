@@ -32,6 +32,18 @@ stream() {
   stations['DRIVE Radio - The Original Synthwave Radio Since 2012']='http://driveradio.be/ondesktop/drive.m3u'
   ordered_stations+=("DRIVE Radio - The Original Synthwave Radio Since 2012")
 
+  stations['STAR FM - Maximum Rock']='http://berlin.starfm.de/player/pls/berlin_pls_aacplus.php'
+  ordered_stations+=("STAR FM - Maximum Rock")
+
+  stations['STAR FM - From Hell']='http://berlin.starfm.de/player/pls/from_hell_pls_aacplus.php'
+  ordered_stations+=("STAR FM - From Hell")
+
+  stations['STAR FM - Rock Classics']='http://berlin.starfm.de/player/pls/classic_rock_pls_aacplus.php'
+  ordered_stations+=("STAR FM - Rock Classics")
+
+  stations['STAR FM - Alternative']='http://berlin.starfm.de/player/pls/alternative_pls_aacplus.php'
+  ordered_stations+=("STAR FM - Alternative")
+
   PS3='Select station: '
   select station_name in "${ordered_stations[@]}"; do
     local station_url="${stations[$station_name]}"
