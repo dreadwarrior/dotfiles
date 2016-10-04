@@ -20,9 +20,6 @@ stream() {
   stations['Jungletrain, 64k']='http://jungletrain.net/64kbps.m3u'
   ordered_stations+=("Jungletrain, 64k")
 
-  stations['Smooth Jazz Tampa, 128k']='http://sc1.mystreamserver.com:8132/listen.pls?sid=1&t=.pls'
-  ordered_stations+=("Smooth Jazz Tampa, 128k")
-
   stations['psyradio * fm, 128k']='http://streamer.psyradio.org:8030/listen.pls'
   ordered_stations+=("psyradio * fm, 128k")
 
