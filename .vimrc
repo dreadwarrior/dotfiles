@@ -2,6 +2,10 @@
 filetype plugin on
 filetype indent on
 
+" Map F8 to disable auto indenting for current file
+" @see http://vim.wikia.com/wiki/How_to_stop_auto_indenting
+nnoremap <F8> :setl noai nocin nosi inde=<CR>
+
 " Highlight search results
 set hlsearch
 
