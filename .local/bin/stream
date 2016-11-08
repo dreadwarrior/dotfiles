@@ -26,9 +26,6 @@ stream() {
   stations['psyradio * fm, 128k']='http://streamer.psyradio.org:8030/listen.pls'
   ordered_stations+=("psyradio * fm, 128k")
 
-  stations['BigUpRadio Dancehall']='http://yp.shoutcast.com/sbin/tunein-station.pls?id=201496'
-  ordered_stations+=("BigUpRadio Dancehall")
-
   stations['DRIVE Radio - The Original Synthwave Radio Since 2012']='http://driveradio.be/ondesktop/drive.m3u'
   ordered_stations+=("DRIVE Radio - The Original Synthwave Radio Since 2012")
 
