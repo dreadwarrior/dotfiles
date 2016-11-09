@@ -41,6 +41,12 @@ stream() {
   stations['STAR FM - Alternative']='http://berlin.starfm.de/player/pls/alternative_pls_aacplus.php'
   ordered_stations+=("STAR FM - Alternative")
 
+  stations['Sensimedia - Dancehall']='http://www.sensimedia.net/radio/dancehall/listen.m3u'
+  ordered_stations+=("Sensimedia - Dancehall")
+
+  stations['Sensimedia - Roots Reggae']='http://www.sensimedia.net/radio/roots/listen.m3u'
+  ordered_stations+=("Sensimedia - Roots Reggae")
+
   PS3='Select station: '
   select station_name in "${ordered_stations[@]}"; do
     local station_url="${stations[$station_name]}"
