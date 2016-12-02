@@ -1,100 +1,92 @@
 [global_config]
   borderless = True
-  enabled_plugins = TestPlugin, LaunchpadCodeURLHandler, Logger, MavenPluginURLHandler
-  focus = system
-  handle_size = 0
-  inactive_color_offset = 0.84
   suppress_multiple_term_dialog = True
-  title_inactive_bg_color = "#ededed"
-  title_inactive_fg_color = "#a7aba7"
-  title_receive_bg_color = "#d6d6d6"
-  title_receive_fg_color = "#4d6067"
-  title_transmit_bg_color = "#4a90d9"
   window_state = maximise
 [keybindings]
-  toggle_zoom = <Primary><Alt>Return
 [layouts]
   [[default]]
     [[[child1]]]
       parent = window0
-      profile = default
       type = Terminal
     [[[window0]]]
       parent = ""
       type = Window
   [[gritt]]
     [[[child0]]]
+      fullscreen = False
+      last_active_term = 0a79833e-8555-480d-801d-5eac8d8e83b2
+      last_active_window = True
+      maximised = True
       order = 0
       parent = ""
       position = 0:0
-      size = 1920, 1080
+      size = 1920, 1055
+      title = /bin/bash
       type = Window
     [[[child1]]]
       order = 0
       parent = child0
-      position = 591
+      position = 528
+      ratio = 0.500473933649
       type = VPaned
     [[[child2]]]
       order = 0
       parent = child1
-      position = 961
+      position = 960
+      ratio = 0.5
       type = HPaned
     [[[child4]]]
       order = 1
       parent = child2
-      position = 296
+      position = 264
+      ratio = 0.5
       type = VPaned
     [[[child7]]]
       order = 1
       parent = child1
-      position = 244
+      position = 263
+      ratio = 0.5
       type = VPaned
     [[[terminal3]]]
       order = 0
       parent = child2
-      profile = default
+      profile = dreadlabs
       type = Terminal
+      uuid = 0a79833e-8555-480d-801d-5eac8d8e83b2
     [[[terminal5]]]
       order = 0
       parent = child4
-      profile = default
+      profile = dreadlabs
       type = Terminal
+      uuid = 5406d85d-f660-423a-b96e-6a010d1af7f4
     [[[terminal6]]]
       order = 1
       parent = child4
-      profile = default
+      profile = dreadlabs
       type = Terminal
+      uuid = 051f8bea-b504-4eec-b9a8-05a21faffd5d
     [[[terminal8]]]
       order = 0
       parent = child7
-      profile = default
+      profile = dreadlabs
       type = Terminal
+      uuid = 6d7cb671-7348-4409-ba82-3bc22aed8294
     [[[terminal9]]]
       order = 1
       parent = child7
-      profile = default
+      profile = dreadlabs
       type = Terminal
+      uuid = c24b2ab7-f2e1-41e3-ae62-9c700119c16f
 [plugins]
 [profiles]
   [[default]]
-    audible_bell = True
+    cursor_color = "#aaaaaa"
+    foreground_color = "#ffffff"
+  [[dreadlabs]]
     background_color = "#002b36"
-    background_darkness = 0.9
-    cursor_color = "#839496"
+    cursor_color = "#aaaaaa"
     font = mononoki 12
     foreground_color = "#839496"
     scrollbar_position = hidden
     show_titlebar = False
-    split_to_group = True
     use_system_font = False
-    visible_bell = True
-  [[SolarizedDark]]
-    audible_bell = True
-    background_color = "#002b36"
-    cursor_color = "#839496"
-    font = Liberation Mono 11
-    foreground_color = "#839496"
-    scrollbar_position = hidden
-    show_titlebar = False
-    use_system_font = False
-    visible_bell = True
