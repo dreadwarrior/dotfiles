@@ -1,6 +1,5 @@
 [global_config]
   borderless = True
-  dbus = True
   enabled_plugins = TestPlugin, LaunchpadCodeURLHandler, Logger, MavenPluginURLHandler
   focus = system
   handle_size = 0
@@ -81,7 +80,7 @@
     audible_bell = True
     background_color = "#002b36"
     background_darkness = 0.9
-    background_image = None
+    cursor_color = "#839496"
     font = mononoki 12
     foreground_color = "#839496"
     scrollbar_position = hidden
@@ -92,7 +91,7 @@
   [[SolarizedDark]]
     audible_bell = True
     background_color = "#002b36"
-    background_image = None
+    cursor_color = "#839496"
     font = Liberation Mono 11
     foreground_color = "#839496"
     scrollbar_position = hidden
