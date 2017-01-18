@@ -1,0 +1,10 @@
+[user]
+	name = Thomas Juhnke\n
+	email = thomas.juhnke@postcon.de
+
+[core]
+	excludesfile = /Users/thomas.juhnke/.gitignore_global
+
+[credential]
+	helper = osxkeychain
+

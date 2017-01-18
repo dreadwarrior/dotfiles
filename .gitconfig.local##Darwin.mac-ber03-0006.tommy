@@ -3,7 +3,7 @@
 	email = dev@van-tomas.de
 
 [core]
-	excludesfile = /Users/tjuhnke/.gitignore_global
+	excludesfile = /Users/tommy/.gitignore_global
 
 [credential]
 	helper = osxkeychain
