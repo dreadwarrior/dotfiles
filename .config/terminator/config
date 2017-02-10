@@ -26,25 +26,25 @@
     [[[child1]]]
       order = 0
       parent = child0
-      position = 528
-      ratio = 0.500473933649
+      position = 632
+      ratio = 0.599052132701
       type = VPaned
     [[[child2]]]
       order = 0
       parent = child1
-      position = 960
-      ratio = 0.5
+      position = 961
+      ratio = 0.500520833333
       type = HPaned
     [[[child4]]]
       order = 1
       parent = child2
-      position = 264
-      ratio = 0.5
+      position = 309
+      ratio = 0.488924050633
       type = VPaned
     [[[child7]]]
       order = 1
       parent = child1
-      position = 263
+      position = 211
       ratio = 0.5
       type = VPaned
     [[[terminal3]]]
