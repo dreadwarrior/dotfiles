@@ -7,6 +7,7 @@
 # mplayer to stream the playlist of the selected station.
 
 stream() {
+  local station_number="${1}"
   local cmd_format="mplayer -playlist '%s'"
   declare -A stations
   declare -a ordered_stations
@@ -47,17 +48,34 @@ stream() {
   stations['Sensimedia - Roots Reggae']='http://www.sensimedia.net/radio/roots/listen.m3u'
   ordered_stations+=("Sensimedia - Roots Reggae")
 
+  if [[ -n $station_number ]]; then
+    cmd="$(cmd_from_station_number)"
+  else
+    cmd="$(cmd_from_stream_select)"
+  fi
+
+  echo "==> Player command: ${cmd}"
+  bash -c "$cmd"
+}
+
+cmd_from_station_number() {
+  local station_name="${ordered_stations[$station_number]}"
+  local station_url="${stations[$station_name]}"
+  local cmd=$(printf "$cmd_format" "$station_url")
+
+  echo "$cmd"
+}
+
+cmd_from_stream_select() {
   PS3='Select station: '
   select station_name in "${ordered_stations[@]}"; do
     local station_url="${stations[$station_name]}"
     local cmd=$(printf "$cmd_format" "$station_url")
 
-    echo "==> Player command: ${cmd}"
-
     break
   done
 
-  bash -c "$cmd"
+  echo "$cmd"
 }
 
 stream "$@"
