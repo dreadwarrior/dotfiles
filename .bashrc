@@ -34,10 +34,12 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-GIT_PROMPT_ONLY_IN_REPO=1
-GIT_PROMPT_SHOW_UPSTREAM=1
-GIT_PROMPT_THEME=Solarized
-source ~/.bash-git-prompt/gitprompt.sh
+if [ -d ~/.bash-git-prompt ]; then
+  GIT_PROMPT_ONLY_IN_REPO=1
+  GIT_PROMPT_SHOW_UPSTREAM=1
+  GIT_PROMPT_THEME=Solarized
+  source ~/.bash-git-prompt/gitprompt.sh
+fi
 
 # vulnerable to shellshock? http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271
 env x='() { :;}; echo "WARNING: SHELLSHOCK DETECTED"' bash --norc -c ':' 2>/dev/null;
