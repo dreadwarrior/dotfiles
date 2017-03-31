@@ -20,6 +20,8 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 alias fuck='sudo $(history -p \!\!)'
+# Quick LOC analysis
+alias qloc='find . -type f -exec wc -l {} + | sort -rn'
 
 alias rmi='rm -i'
 alias install-composer='curl -sS https://getcomposer.org/installer | php -- --filename=composer'
