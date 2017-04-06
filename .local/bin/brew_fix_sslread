@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#
+# -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-
+# vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:
+#
+# Fixes "SSLRead() return error -9806" in OSX using brew
+#
+# @see https://gist.github.com/entropiae/a899d8a78dc8a38f505e
+
+system_type=$(uname -s)
+
+if [ "$system_type" != "Darwin" ]; then
+  echo 'You'"'"'re not on Mac OS X.'
+  exit 1
+fi
+
+brew remove git
+brew remove curl
+
+brew install openssl
+brew install --with-openssl curl
+brew install --with-brewed-curl --with-brewed-openssl git
+
