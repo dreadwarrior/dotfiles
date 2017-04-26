@@ -3,5 +3,5 @@
 	email = tommy@van-tomas.de
 
 [core]
-	excludesfile = /home/tommy/.gitignore_global
+	excludesfile = ~/.gitignore_global
 
