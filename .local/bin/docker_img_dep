@@ -1,0 +1,55 @@
+#!/bin/sh
+#
+# -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-
+# vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:
+#
+# Shows depending child images
+#
+# @see https://stackoverflow.com/a/39337542
+
+set -e
+
+usage() {
+  fgWhite="\033[0;37m"
+  clrReset="\033[m"
+
+  echo "
+${fgWhite}OVERVIEW${clrReset}
+
+        ${fgWhite}docker_img_dep <Image id>${clrReset}
+
+${fgWhite}DESCRIPTION${clrReset}
+
+        Inspects all dependent images of a certain image.
+
+        If you issue the command:
+        
+        ~\$ ${fgWhite}docker rmi <Image id>${clrReset}
+
+        you may run into the following message:
+
+        ${fgWhite}Error response from daemon: conflict: unable to delete <Image id> (cannot be forced) - image has dependent child images${clrReset}
+        
+        You can then use ${fgWhite}docker_img_dep${clrReset} to investigate which
+        images rely on the one you want to delete.
+
+${fgWhite}ARGUMENTS${clrReset}
+
+        Image id to inspect
+
+"
+}
+
+while [ $# -gt 0 ]
+do
+  case "$1" in
+    -* | --help | -h)
+      usage
+      exit 1;;
+    *) break;;
+  esac
+done
+
+_image_hash="${1?Please specify an image id.}"
+
+docker inspect --format='{{.Id}} {{.Parent}}' $(docker images --filter since=${_image_hash} --quiet)
