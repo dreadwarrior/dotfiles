@@ -26,7 +26,7 @@ export CDPATH="$HOME/workspace:$HOME/playground:$CDPATH"
 export GOPATH="$HOME/workspace/golang"
 #export PYTHONPATH="$PYTHONPATH:$HOME/.local/lib/python$(python --version)/site-packages"
 
-if which ruby >/dev/null && which gem >/dev/null; then
-  PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-fi
+#if which ruby >/dev/null && which gem >/dev/null; then
+#  PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+#fi
 
