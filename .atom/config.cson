@@ -1,5 +1,6 @@
 "*":
   core:
+    projectHome: "~/workspace"
     telemetryConsent: "no"
     themes: [
       "one-light-ui"
@@ -7,7 +8,7 @@
     ]
   editor:
     fontFamily: "mononoki"
-    fontSize: 18
+    fontSize: 16
     invisibles: {}
     showIndentGuide: true
     showInvisibles: true
