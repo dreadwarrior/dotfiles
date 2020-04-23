@@ -46,3 +46,5 @@ env x='() { :;}; echo "WARNING: SHELLSHOCK DETECTED"' bash --norc -c ':' 2>/dev/
 
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+[ -s ~/.jabba/jabba.sh ] && source ~/.jabba/jabba.sh

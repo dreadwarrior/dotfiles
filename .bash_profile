@@ -3,3 +3,5 @@ if [ -f ~/.bashrc ]; then
 fi
 
 if [ -e /home/tommy/.nix-profile/etc/profile.d/nix.sh ]; then . /home/tommy/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+[ -s ~/.jabba/jabba.sh ] && source ~/.jabba/jabba.sh
