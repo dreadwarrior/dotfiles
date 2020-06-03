@@ -7,5 +7,9 @@
 
 dotfiles_install::bash_git_prompt() {
   cd $HOME
-  git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt
+  if [ -d .bash-git-prompt ]; then
+    (cd .bash-git-prompt; git fetch; git pull)
+  else
+    git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt
+  fi
 }

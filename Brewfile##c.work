@@ -1,0 +1,7 @@
+brew "bash-completion"
+brew "git"
+brew "jq"
+brew "md5sha1sum"
+brew "pass"
+
+cask "iterm2"

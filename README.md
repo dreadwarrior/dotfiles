@@ -24,18 +24,9 @@ and [Moka][moka_icon_theme] icon themes are copied to `.local/share/icons`. This
 created if not existing.
 
 On MacOS hosts, the `dotfiles_install` will also performs some adjustments for the Finder
-and installs some necessary [brew][brew] packages:
-
-  * bash-completion
-  * git
-  * mplayer
-  * ssh-copy-id
+and installs [brew][brew] packages.
 
 ### Other scripts
-
-  * **brew_tools_install**
-
-    *Installs some more tools with Homebrew on Mac OS X*
 
   * **docker_stop_rm**
 
@@ -88,6 +79,8 @@ and installs some necessary [brew][brew] packages:
     ~$ sudo apt install yadm
     ~$ cd $HOME
     ~$ yadm clone git@github.com:dreadwarrior/dotfiles
+	~$ # the next step is optional for YADM configuration on a business machine:
+	~$ yadm config local.class work
     ~$ source ~/.bashrc
     ~$ dotfiles_install
 

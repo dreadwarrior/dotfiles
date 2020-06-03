@@ -1,0 +1,10 @@
+brew "bash-completion"
+brew "git"
+brew "jq"
+brew "md5sha1sum"
+brew "mplayer"
+brew "nyancat"
+brew "pass"
+brew "youtube-dl"
+
+cask "iterm2"

@@ -27,7 +27,7 @@ dotfiles_install() {
   fi
 
   if [ "$system_type" = "Darwin" ]; then
-    dotfiles_install::darwin_brew_packages
+	dotfiles_install::darwin_brew_packages
     dotfiles_install::darwin_finder
   fi
 }
