@@ -81,6 +81,7 @@ and installs [brew][brew] packages.
     ~$ yadm clone git@github.com:dreadwarrior/dotfiles
 	~$ # the next step is optional for YADM configuration on a business machine:
 	~$ yadm config local.class work
+	~$ yadm alt
     ~$ source ~/.bashrc
     ~$ dotfiles_install
 
@@ -98,6 +99,9 @@ and installs [brew][brew] packages.
     # same as on Linux:
     ~$ cd $HOME
     ~$ yadm clone git@github.com:dreadwarrior/dotfiles
+	~$ # the next step is optional for YADM configuration on a business machine:
+	~$ yadm config local.class work
+	~$ yadm alt
     ~$ source ~/.bashrc
     ~$ dotfiles_install
 
