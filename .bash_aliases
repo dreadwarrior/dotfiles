@@ -24,22 +24,6 @@ alias fuck='sudo $(history -p \!\!)'
 alias qloc='find . -type f -exec wc -l {} + | sort -rn'
 
 alias rmi='rm -i'
-alias install-composer='curl -sS https://getcomposer.org/installer | php -- --filename=composer'
-alias php='php -dzend_extension=xdebug.so'
-alias phpunit='php $(which phpunit)'
-
-alias vup='vagrant up'
-alias vsh='vagrant up && vagrant ssh'
-alias vha='vagrant halt'
-alias vrl='vagrant reload'
-
-# "docker machine up" - "docker machine down"
-#
-alias dmu='docker-machine start'
-alias dmd='docker-machine stop'
-alias dme='docker-machine env'
-alias dob='docker build -t'
-alias docker_inspect_mounts='docker inspect --format '"'"'{{ .Mounts }}'"'"''
 
 # "Watch log"
 #
