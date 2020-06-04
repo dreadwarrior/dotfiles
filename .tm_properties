@@ -1,1 +1,1 @@
-include={*,.tm_properties,.htaccess,.atom,.bash_aliases,.bash_profile,.bashrc*,.config,.fonts.conf,.gitconfig*,.gnupg,.inputrc,.local,.profile,.themes,.vimrc}
+include={*,.tm_properties,.htaccess,.atom,.bash_aliases,.bash_profile,.bashrc*,.config,.fonts.conf,.fzf*,.gitconfig*,.gnupg,.inputrc,.local,.profile,.themes,.vimrc}
