@@ -104,6 +104,7 @@ and installs [brew][brew] packages.
 	~$ yadm alt
     ~$ source ~/.bashrc
     ~$ dotfiles_install
+	~$ $(brew --prefix)/opt/fzf/install
 
 ## TODOs
 
