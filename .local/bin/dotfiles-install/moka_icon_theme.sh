@@ -5,6 +5,8 @@
 #
 # Installs the Faba and Moka icon themes into $HOME/.local/share/icons
 
+system_type=$(uname -s)
+
 MOKA_TEMP_DIR="/tmp"
 
 dotfiles_install::moka_icon_theme_prepare() {
@@ -30,4 +32,12 @@ dotfiles_install::moka_icon_theme_install() {
 
   cd "$MOKA_TEMP_DIR/moka-icon-theme"
   cp -Rf "Moka" "$HOME/.local/share/icons"
+}
+
+dotfiles_install::moka_icon_theme() {
+    if [ "$system_type" = "Darwin" ]; then
+        echo "[skip] Installation of the Moka icon theme is not available on non-Linux machines."
+    else
+        dotfiles_install::moka_icon_theme_install
+    fi
 }

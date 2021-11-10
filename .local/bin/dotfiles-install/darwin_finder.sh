@@ -5,6 +5,8 @@
 #
 # Performs some adjustments for the Finder
 
+system_type=$(uname -s)
+
 # Show Hidden Files
 dotfiles_install::darwin_finder::show_dotfiles() {
   defaults write com.apple.finder AppleShowAllFiles true
@@ -30,11 +32,15 @@ dotfiles_install::darwin_finder::disable_metadata_on_usb_volumes() {
 }
 
 dotfiles_install::darwin_finder() {
-  dotfiles_install::darwin_finder::show_dotfiles
-  dotfiles_install::darwin_finder::show_all_file_extensions
-  dotfiles_install::darwin_finder::disable_metadata_on_network_volumes
-  dotfiles_install::darwin_finder::disable_metadata_on_usb_volumes
+  if [ "$system_type" = "Darwin" ]; then
+    dotfiles_install::darwin_finder::show_dotfiles
+    dotfiles_install::darwin_finder::show_all_file_extensions
+    dotfiles_install::darwin_finder::disable_metadata_on_network_volumes
+    dotfiles_install::darwin_finder::disable_metadata_on_usb_volumes
 
-  killall Finder
+    killall Finder
+  else
+    echo "[skip] Adjusting Finder settings is available only on macOS machines."
+  fi
 }
 

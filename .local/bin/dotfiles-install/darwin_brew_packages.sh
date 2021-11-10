@@ -5,9 +5,15 @@
 #
 # Installs relevant Homebrew packages
 
-dotfiles_install::darwin_brew_packages() {
-  brew analytics off
+system_type=$(uname -s)
 
-  brew bundle install
+dotfiles_install::darwin_brew_packages() {
+  if [ "$system_type" = "Darwin" ]; then
+    brew analytics off
+
+    brew bundle install
+  else
+      echo "[skip] Installation of Homebrew packages is available only on macOS machines."
+  fi
 }
 
