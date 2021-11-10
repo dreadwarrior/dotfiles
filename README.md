@@ -26,6 +26,11 @@ created if not existing.
 On MacOS hosts, the `dotfiles_install` will also performs some adjustments for the Finder
 and installs [brew][brew] packages.
 
+The `dotfiles_install` steps can be enabled / disabled, execute the following 
+command to display the help screen:
+
+    ~$ dotfiles_install -h
+
 ### Other scripts
 
   * **docker_stop_rm**
@@ -52,10 +57,6 @@ and installs [brew][brew] packages.
 
     *Outputs information about an (HTTP-)SSL certificate of a given hostname.*
 
-  * **status**
-
-    *Work-in-progress script for printing out hardware information (battery, cpu, ...)*
-
   * **stream**
 
     *Simple wrapper around `mplayer -playlist` for listening to shoutcast streams.*
@@ -79,9 +80,9 @@ and installs [brew][brew] packages.
     ~$ sudo apt install yadm
     ~$ cd $HOME
     ~$ yadm clone git@github.com:dreadwarrior/dotfiles
-	~$ # the next step is optional for YADM configuration on a business machine:
-	~$ yadm config local.class work
-	~$ yadm alt
+    ~$ # the next step is optional for YADM configuration on a business machine:
+    ~$ yadm config local.class work
+    ~$ yadm alt
     ~$ source ~/.bashrc
     ~$ dotfiles_install
 
@@ -99,12 +100,12 @@ and installs [brew][brew] packages.
     # same as on Linux:
     ~$ cd $HOME
     ~$ yadm clone git@github.com:dreadwarrior/dotfiles
-	~$ # the next step is optional for YADM configuration on a business machine:
-	~$ yadm config local.class work
-	~$ yadm alt
+    ~$ # the next step is optional for YADM configuration on a business machine:
+    ~$ yadm config local.class work
+    ~$ yadm alt
     ~$ source ~/.bashrc
     ~$ dotfiles_install
-	~$ $(brew --prefix)/opt/fzf/install
+    ~$ $(brew --prefix)/opt/fzf/install
 
 ## TODOs
 
@@ -121,9 +122,6 @@ and installs [brew][brew] packages.
   - `⌘ CMD`+`⇧ SHIFT`+`.` Reveals hidden files in Open/Save dialogs on Mac OS
   - [Spring-Cleaning Homebrew Dependencies](http://patricklenz.co/blog/2012/5/21/spring-cleaning-homebrew-dependencies)
 
-### Useful Darwin applications
-
-  - [Fugu - a free sFTP, SCP and SSH frontend][fugu]
 
 [yadm]: https://github.com/TheLocehiliosan/yadm
 [bash_git_prompt]: https://github.com/magicmonty/bash-git-prompt
@@ -132,5 +130,3 @@ and installs [brew][brew] packages.
 [faba_icon_theme_install]: https://github.com/moka-project/faba-icon-theme/blob/master/install-icon-theme.sh
 [faba_mono_icon_theme]: https://github.com/moka-project/faba-mono-icons
 [brew]: http://brew.sh/
-[fugu]: http://rsug.itd.umich.edu/software/fugu/
-
