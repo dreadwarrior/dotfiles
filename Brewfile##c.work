@@ -1,8 +1,8 @@
 brew "bash-completion"
 brew "fzf"
 brew "git"
+brew "gnupg"
 brew "jq"
-brew "md5sha1sum"
-brew "pass"
-
-cask "iterm2"
+brew "ssh-copy-id"
+brew "tig"
+brew "wget"
