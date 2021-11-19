@@ -1,3 +1,16 @@
+[giggle]
+	main-window-maximized = true
+	main-window-geometry = 0x0+0+0
+	history-view-vpane-position = 357
+	main-window-view = HistoryView
+	file-view-vpane-position = 230
+	show-graph = true
+	file-view-hpane-position = 395
+
+[gui]
+	fontdiff = -family \"Ubuntu Mono\" -size 12 -weight normal -slant roman -underline 0 -overstrike 0
+	fontui = -family Ubuntu -size 12 -weight normal -slant roman -underline 0 -overstrike 0
+
 [user]
 	name = Thomas Juhnke\n
 	email = tommy@van-tomas.de
