@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+#
+# -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-
+# vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:
+#
+# IntelliJ IDEA Starter
+
+system_type=$(uname -s)
+
+if [ "$system_type" = "Darwin" ]; then
+  open -na "IntelliJ IDEA.app" --args "nosplash" "$@"
+else
+  echo "[cancel] Execution of IntelliJ IDEA cancelled."
+  echo "[cancel] Please read the IntelliJ IDEA documentation how to access the Linux launcher shell script:"
+  echo "[cancel]"
+  echo "[cancel] https://www.jetbrains.com/help/idea/working-with-the-ide-features-from-command-line.html#standalone"
+fi
+
