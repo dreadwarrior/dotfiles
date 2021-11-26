@@ -31,3 +31,5 @@ alias wlog='less +F'
 
 alias hosts='vim /etc/hosts'
 
+alias mvmm='maven_verify_multi_module'
+
