@@ -38,10 +38,6 @@ List of commands shipped with this **dotfiles** instance.
 
 :   Converts a bare git repository into a working copy.
 
-`hl4prezi`
-
-:   Uses pygments to apply syntax highlighting for presentation software.
-
 `idea`
 
 :   IntelliJ IDEA Starter.
