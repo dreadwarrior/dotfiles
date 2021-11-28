@@ -10,3 +10,6 @@ MANPAGE.html = $(PANDOC) --standalone $(PANDOCFLAGS) --to html
 
 %.$(MANSECTION).html: %.$(MANSECTION).md
 	$(MANPAGE.html) $< -o ./htmlman$(MANSECTION)/$@
+
+index.html: index.md
+	$(MANPAGE.html) $< -o $@
