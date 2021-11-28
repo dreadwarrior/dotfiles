@@ -1,147 +1,203 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-  <meta http-equiv='content-type' value='text/html;charset=utf8'>
-  <meta name='generator' value='Ronn/v0.7.3 (http://github.com/rtomayko/ronn/tree/0.7.3)'>
-  <title>maven_verify_multi_module(1) - Focused test execution of specific modules in a Maven multi-module project.</title>
-  <style type='text/css' media='all'>
-  /* style: man */
-  body#manpage {margin:0}
-  .mp {max-width:100ex;padding:0 9ex 1ex 4ex}
-  .mp p,.mp pre,.mp ul,.mp ol,.mp dl {margin:0 0 20px 0}
-  .mp h2 {margin:10px 0 0 0}
-  .mp > p,.mp > pre,.mp > ul,.mp > ol,.mp > dl {margin-left:8ex}
-  .mp h3 {margin:0 0 0 4ex}
-  .mp dt {margin:0;clear:left}
-  .mp dt.flush {float:left;width:8ex}
-  .mp dd {margin:0 0 0 9ex}
-  .mp h1,.mp h2,.mp h3,.mp h4 {clear:left}
-  .mp pre {margin-bottom:20px}
-  .mp pre+h2,.mp pre+h3 {margin-top:22px}
-  .mp h2+pre,.mp h3+pre {margin-top:5px}
-  .mp img {display:block;margin:auto}
-  .mp h1.man-title {display:none}
-  .mp,.mp code,.mp pre,.mp tt,.mp kbd,.mp samp,.mp h3,.mp h4 {font-family:monospace;font-size:14px;line-height:1.42857142857143}
-  .mp h2 {font-size:16px;line-height:1.25}
-  .mp h1 {font-size:20px;line-height:2}
-  .mp {text-align:justify;background:#fff}
-  .mp,.mp code,.mp pre,.mp pre code,.mp tt,.mp kbd,.mp samp {color:#131211}
-  .mp h1,.mp h2,.mp h3,.mp h4 {color:#030201}
-  .mp u {text-decoration:underline}
-  .mp code,.mp strong,.mp b {font-weight:bold;color:#131211}
-  .mp em,.mp var {font-style:italic;color:#232221;text-decoration:none}
-  .mp a,.mp a:link,.mp a:hover,.mp a code,.mp a pre,.mp a tt,.mp a kbd,.mp a samp {color:#0000ff}
-  .mp b.man-ref {font-weight:normal;color:#434241}
-  .mp pre {padding:0 4ex}
-  .mp pre code {font-weight:normal;color:#434241}
-  .mp h2+pre,h3+pre {padding-left:0}
-  ol.man-decor,ol.man-decor li {margin:3px 0 10px 0;padding:0;float:left;width:33%;list-style-type:none;text-transform:uppercase;color:#999;letter-spacing:1px}
-  ol.man-decor {width:100%}
-  ol.man-decor li.tl {text-align:left}
-  ol.man-decor li.tc {text-align:center;letter-spacing:4px}
-  ol.man-decor li.tr {text-align:right;float:right}
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="" />
+  <title>maven_verify_multi_module(1) dreadlabs.de | dotfiles</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
-<!--
-  The following styles are deprecated and will be removed at some point:
-  div#man, div#man ol.man, div#man ol.head, div#man ol.man.
-
-  The .man-page, .man-decor, .man-head, .man-foot, .man-title, and
-  .man-navigation should be used instead.
--->
-<body id='manpage'>
-  <div class='mp' id='man'>
-
-  <div class='man-navigation' style='display:none'>
-    <a href="#NAME">NAME</a>
-    <a href="#SYNOPSIS">SYNOPSIS</a>
-    <a href="#DESCRIPTION">DESCRIPTION</a>
-    <a href="#OPTIONS">OPTIONS</a>
-    <a href="#EXAMPLES">EXAMPLES</a>
-    <a href="#COPYRIGHT">COPYRIGHT</a>
-    <a href="#SEE-ALSO">SEE ALSO</a>
-  </div>
-
-  <ol class='man-decor man-head man head'>
-    <li class='tl'>maven_verify_multi_module(1)</li>
-    <li class='tc'>dotfiles</li>
-    <li class='tr'>maven_verify_multi_module(1)</li>
-  </ol>
-
-  <h2 id="NAME">NAME</h2>
-<p class="man-name">
-  <code>maven_verify_multi_module</code> - <span class="man-whatis">Focused test execution of specific modules in a Maven multi-module project.</span>
-</p>
-
-<h2 id="SYNOPSIS">SYNOPSIS</h2>
-
-<p><code>maven_verify_multi_module</code> [<code>-c</code>|<code>--compile-or-install</code> <var>arg</var>]
-                            [<code>-s</code>|<code>--(no-)dependencies-skip-tests</code>]
-                            [<code>-h</code>|<code>--help</code>] <var>target-module(s)</var></p>
-
-<h2 id="DESCRIPTION">DESCRIPTION</h2>
-
-<p>Running tests on a (complex) Maven multi-module project for a <strong>specifc</strong>
-target module can be time consuming. This script helps to 'compile' or
-'install' the dependencies for that target module and runs the test of
-that target module afterwards.</p>
-
-<p>This helper requires either a local Maven wrapper (mvnw) or a globally
-installed Maven executable.</p>
-
-<h2 id="OPTIONS">OPTIONS</h2>
-
-<ul>
-<li><p><code>-c</code>, <code>--compile-or-install</code>:
-Whether to 'compile' only or 'install' the dependencies.
-(defaults to 'compile')</p></li>
-<li><p><code>-s</code>, <code>--dependencies-skip-tests</code>, <code>--no-dependencies-skip-tests</code>:
-Whether to skip tests on dependencies build phase or not.
-(defaults to 'false')</p></li>
-<li><p><code>-h</code>, <code>--help</code>
-Prints help"</p></li>
-<li><p><var>target-module(s)</var>:
-The target module(s) for which the tests should be run for.
-Comma-separated if multiple modules should be targeted.</p></li>
-</ul>
-
-
-<h2 id="EXAMPLES">EXAMPLES</h2>
-
-<p>If the multi module project you're working on makes it necessary to
-install the dependencies, use the [<code>-c</code>|<code>--compile-or-install</code>]
-argument with the value set to 'install':</p>
-
-<pre><code>$ maven_verify_multi_module -c install my-module-name
-</code></pre>
-
-<p>If you don't want to run the tests of the dependencies of the target
-module, use the [<code>-s</code>|<code>--(no-)dependencies-skip-tests</code>] flag:</p>
-
-<pre><code>$ maven_verify_multi_module -s my-module-name
-</code></pre>
-
-<p>If you want to run the helper for multiple target modules, use a
-comma-separated list of module names:</p>
-
-<pre><code>$ maven_verify_multi_module mod1,mod2
-</code></pre>
-
-<h2 id="COPYRIGHT">COPYRIGHT</h2>
-
-<p>maven_verify_multi_module is (C) 2021 Thomas Juhnke https://dreadlabs.de, License: MIT</p>
-
-<h2 id="SEE-ALSO">SEE ALSO</h2>
-
-<p><a class="man-ref" href="http://man.cx/mvn(1)">mvn<span class="s">(1)</span></a></p>
-
-
-  <ol class='man-decor man-foot man foot'>
-    <li class='tl'>dreadlabs.de</li>
-    <li class='tc'>November 2021</li>
-    <li class='tr'>maven_verify_multi_module(1)</li>
-  </ol>
-
-  </div>
+<body>
+<header id="title-block-header">
+<h1 class="title">maven_verify_multi_module(1) dreadlabs.de | dotfiles</h1>
+<p class="author"></p>
+<p class="date">November 2021</p>
+</header>
+<h1 id="name">NAME</h1>
+<p><strong>maven_verify_multi_module</strong> - Focused test execution of specific modules in a Maven multi-module project.</p>
+<h1 id="synopsis">SYNOPSIS</h1>
+<p><strong><code>maven_verify_multi_module</code></strong> [<code>-g</code> (<code>compile</code>|<code>install</code>)] [<code>-s</code>] [<code>-h</code>] <em>target-module(s)</em></p>
+<h1 id="description">DESCRIPTION</h1>
+<p>Running tests on a (complex) Maven multi-module project for a <strong>specifc</strong> target module can be time consuming. This script helps to ‘compile’ or ‘install’ the dependencies for that target module and runs the test of that target module afterwards.</p>
+<p>This helper requires either a local Maven wrapper (mvnw) or a globally installed Maven executable.</p>
+<h1 id="options">OPTIONS</h1>
+<dl>
+<dt><code>-g</code> (<code>compile</code>|<code>install</code>), <code>--dependencies-goal=</code>(<code>compile</code>|<code>install</code>)</dt>
+<dd><p>Whether to execute the ‘compile’ or ‘install’ goal for the dependencies. (defaults to “compile”)</p>
+</dd>
+<dt><code>-s</code>, <code>--skip-dependencies-tests</code>, <code>--no-skip-dependencies-tests</code></dt>
+<dd><p>Whether to skip tests on dependencies build phase or not. (defaults to “false”)</p>
+</dd>
+<dt><code>-h</code>, <code>--help</code></dt>
+<dd><p>Prints help</p>
+</dd>
+<dt><em>target-module(s)</em></dt>
+<dd><p>The target module(s) for which the tests should be run for. Comma-separated if multiple modules should be targeted.</p>
+</dd>
+</dl>
+<h1 id="exit-status">EXIT STATUS</h1>
+<dl>
+<dt>0</dt>
+<dd><p>successful execution</p>
+</dd>
+<dt>1</dt>
+<dd><p>error while parsing command line arguments</p>
+</dd>
+<dt>64</dt>
+<dd><p>no valid Maven executable found</p>
+</dd>
+</dl>
+<h1 id="examples">EXAMPLES</h1>
+<p>If the multi-module project requires to install the dependencies, use the <strong><code>-g</code></strong> argument with the value set to “install”:</p>
+<pre><code>$ maven_verify_multi_module -g install my-module-name</code></pre>
+<p>To skip running tests of the target module(s) dependencies use the <strong><code>-s</code></strong> flag:</p>
+<pre><code>$ maven_verify_multi_module -s my-module-name</code></pre>
+<p>To run <strong>MVVM</strong> for multiple target modules, use a comma-separated list of module names:</p>
+<pre><code>$ maven_verify_multi_module mod1,mod2</code></pre>
+<h1 id="see-also">SEE ALSO</h1>
+<p>mvn(1)</p>
 </body>
 </html>

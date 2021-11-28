@@ -9,9 +9,9 @@
 #
 # https://twitter.com/gunnarmorling/status/1463792047316520965
 
-# ARG_OPTIONAL_SINGLE([compile-or-install],[c],[Whether to compile only or install the dependencies.])
-# ARG_OPTIONAL_BOOLEAN([dependencies-skip-tests],[s],[Whether to skip tests on dependencies install phase or not.])
-# ARG_POSITIONAL_SINGLE([target-module],[The target module for which the tests should be run for.],[])
+# ARG_OPTIONAL_SINGLE([dependencies-goal],[g],[Whether to execute the compile or install goal for the dependencies.], [compile])
+# ARG_OPTIONAL_BOOLEAN([skip-dependencies-tests],[s],[Whether to skip tests on dependencies build phase or not.], [])
+# ARG_POSITIONAL_SINGLE([target-modules],[The target modules for which the tests should be run for.],[])
 # ARG_HELP([The general script's help msg])
 # ARGBASH_GO()
 # needed because of Argbash --> m4_ignore([
@@ -19,6 +19,9 @@
 # Argbash is a bash code generator used to get arguments parsing right.
 # Argbash is FREE SOFTWARE, see https://argbash.io for more info
 # Generated online by https://argbash.io/generate
+
+# Enabling trace
+#set -x
 
 _fmt_red=$(tput setaf 1)
 _fmt_blue=$(tput setaf 4)
@@ -41,8 +44,8 @@ begins_with_short_option() {
 # THE DEFAULTS INITIALIZATION - POSITIONALS
 _positionals=()
 # THE DEFAULTS INITIALIZATION - OPTIONALS
-_arg_compile_or_install="compile"
-_arg_dependencies_skip_tests="false"
+_arg_dependencies_goal="compile"
+_arg_skip_dependencies_tests="false"
 
 
 print_help() {
@@ -56,27 +59,27 @@ parse_commandline() {
   do
     _key="$1"
     case "$_key" in
-      -c|--compile-or-install)
+      -g|--dependencies-goal)
         test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
-        _arg_compile_or_install="$2"
+        _arg_dependencies_goal="$2"
         shift
         ;;
-      --compile-or-install=*)
-        _arg_compile_or_install="${_key##--compile-or-install=}"
+      --dependencies-goal=*)
+        _arg_dependencies_goal="${_key##--dependencies-goal=}"
         ;;
-      -c*)
-        _arg_compile_or_install="${_key##-c}"
+      -g*)
+        _arg_dependencies_goal="${_key##-g}"
         ;;
-      -s|--no-dependencies-skip-tests|--dependencies-skip-tests)
-        _arg_dependencies_skip_tests="true"
-        test "${1:0:5}" = "--no-" && _arg_dependencies_skip_tests="false"
+      -s|--no-skip-dependencies-tests|--skip-dependencies-tests)
+        _arg_skip_dependencies_tests="true"
+        test "${1:0:5}" = "--no-" && _arg_skip_dependencies_tests="false"
         ;;
       -s*)
-        _arg_dependencies_skip_tests="true"
+        _arg_skip_dependencies_tests="true"
         _next="${_key##-s}"
         if test -n "$_next" -a "$_next" != "$_key"
         then
-          { begins_with_short_option "$_next" && shift && set -- "-s" "-${_next}" "$@"; } || die "The short option '$_key' can't be decomposed to ${_key:0:2} and -${_key:2}, because ${_key:0:2} doesn't accept value and '-${_key:2:1}' doesn't correspond to a short option."
+          { begins_with_short_option "$_next" && shift && set -- "-s" "-${_next}" "$@"; } || die "The short option '$_key' can't be decomposed to ${_key:0:2} and -${_key:2}, because ${_key:0:2} doesn't accept value and '-${_key:2:1}' doesn't correspond to a short option." 1
         fi
         ;;
       -h|--help)
@@ -138,10 +141,10 @@ elif type "$_maven_command_global" &> /dev/null; then
   printf '%s\n' "[${_fmt_blue}INFO${_fmt_normal}] MVMM: Using global Maven binary."
   _maven_command="$_maven_command_global"
 else
-  _PRINT_HELP=no die "[${_fmt_red}ERROR${_fmt_normal}] No Maven executable found." 1
+  _PRINT_HELP=no die "[${_fmt_red}ERROR${_fmt_normal}] No Maven executable found." 64
 fi
 
-$_maven_command clean $_arg_compile_or_install -DskipTests=$_arg_dependencies_skip_tests -pl :"$_arg_target_module" -am && \
+$_maven_command clean $_arg_dependencies_goal -DskipTests=$_arg_skip_dependencies_tests -pl :"$_arg_target_module" -am && \
 $_maven_command clean verify -pl :"$_arg_target_module"
 
 # ] <-- needed because of Argbash
