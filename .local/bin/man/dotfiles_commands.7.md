@@ -30,10 +30,6 @@ List of commands shipped with this **dotfiles** instance.
 
 :   Deploy Docker images via scp.
 
-`fixbom`
-
-:   Remove BOM from TYPO3 ReStructuredText documentation files.
-
 `get_random_password`
 
 :   Generate a random password using various shell commands and tools.
