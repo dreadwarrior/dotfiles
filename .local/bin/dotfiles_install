@@ -39,13 +39,7 @@ _arg_brewbundle="off"
 _arg_finder="on"
 
 print_help() {
-  printf '%s\n' "The general script's help msg"
-  printf 'Usage: %s [-p|--(no-)bashgitprompt] [-m|--(no-)mokaicontheme] [-b|--(no-)brewbundle] [-f|--(no-)finder] [-h|--help]\n' "$0"
-  printf '\t%s\n' "-p, --bashgitprompt, --no-bashgitprompt: Switch installation of bash-git-prompt (on by default)"
-  printf '\t%s\n' "-m, --mokaicontheme, --no-mokaicontheme: Switch installation of Moka icon themes (Linux only) (off by default)"
-  printf '\t%s\n' "-b, --brewbundle, --no-brewbundle: Install Homebrew packages (macOS only) (off by default)"
-  printf '\t%s\n' "-f, --finder, --no-finder: Adjust Finder settings (macOS only) (on by default)"
-  printf '\t%s\n' "-h, --help: Prints help"
+  man dotfiles_install 1
 }
 
 
