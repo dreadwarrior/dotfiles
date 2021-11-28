@@ -1,4 +1,4 @@
-% dotfiles_install(1) dreadlabs.de | dotfiles
+% dotfiles_install(1) dreadwarrior | dotfiles
 %
 % November 2021
 

@@ -1,4 +1,4 @@
-% dreadwarrior_dotfiles(7) dreadlabs.de | dotfiles
+% dreadwarrior_dotfiles(7) dreadwarrior | dotfiles
 %
 % November 2021
 
