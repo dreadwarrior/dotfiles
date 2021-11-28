@@ -1,4 +1,4 @@
-% darwin_ramfs_umount(1) dreadlabs.de | dotfiles
+% darwin_ramfs_umount(1) dreadwarrior | dotfiles
 %
 % November 2021
 

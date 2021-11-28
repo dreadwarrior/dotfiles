@@ -1,4 +1,4 @@
-% maven_verify_multi_module(1) dreadlabs.de | dotfiles
+% maven_verify_multi_module(1) dreadwarrior | dotfiles
 %
 % November 2021
 
