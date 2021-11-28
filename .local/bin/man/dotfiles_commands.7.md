@@ -85,4 +85,5 @@ List of commands shipped with this **dotfiles** instance.
 
 # SEE ALSO
 
-darwin_ramfs_mount(1), darwin_ramfs_umount(1), dotfiles_aliases(7), dreadwarrior_dotfiles(7)
+darwin_ramfs_mount(1), darwin_ramfs_umount(1), docker_scp_deploy(1), 
+dotfiles_aliases(7), dreadwarrior_dotfiles(7)
