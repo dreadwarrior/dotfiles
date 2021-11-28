@@ -12,19 +12,7 @@
 set -e
 
 if [ -z "${1}" ]; then
-  echo "
-USAGE
-
-    [MODE=<hostname | ip>] $(basename "${0}") \"<hostname_or_ip_1> <hostname_or_ip_2>...<hostname_or_ip_N>\"
-
-DESCRIPTION
-
-    Discovers and SSH host to prevent \"Host key verification failed.\" errors during
-    automatic SSH command executions without human interaction.
-
-    It removes and (re-)adds the discovered hosts to the ~/.ssh/known_hosts file
-    of the executing user.
-  "
+  man ssh_key_discovery 1
   exit 0
 fi
 
