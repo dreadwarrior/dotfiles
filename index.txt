@@ -1,0 +1,4 @@
+# Ronn URL mappings index
+
+# external manuals
+mvn(1)     http://man.cx/mvn(1)

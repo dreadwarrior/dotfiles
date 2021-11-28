@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="" />
+  <title>dotfiles_commands(7) dreadlabs.de | dotfiles</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">dotfiles_commands(7) dreadlabs.de | dotfiles</h1>
+<p class="author"></p>
+<p class="date">November 2021</p>
+</header>
+<h1 id="name">NAME</h1>
+<p><strong>dotfiles commands</strong></p>
+<h1 id="description">DESCRIPTION</h1>
+<p>List of commands shipped with this <strong>dotfiles</strong> instance.</p>
+<dl>
+<dt><code>brew_fix_sslread</code></dt>
+<dd><p>Fixes “SSLRead() return error -9806” on macOS using brew.</p>
+</dd>
+<dt><code>darwin_ramfs_mount</code></dt>
+<dd><p>Create and mount a RAM disk on macOS.</p>
+</dd>
+<dt><code>drawin_ramfs_umount</code></dt>
+<dd><p>Unmount and detach a RAM disk on macOS.</p>
+</dd>
+<dt><code>darwin_readlink</code></dt>
+<dd><p><code>readlink -f</code> alternative on macOS hosts.</p>
+</dd>
+<dt><code>docker_scp_deploy</code></dt>
+<dd><p>Deploy Docker images via scp.</p>
+</dd>
+<dt><code>fixbom</code></dt>
+<dd><p>Remove BOM from TYPO3 ReStructuredText documentation files.</p>
+</dd>
+<dt><code>get_random_password</code></dt>
+<dd><p>Generate a random password using various shell commands and tools.</p>
+</dd>
+<dt><code>git_bare_to_normal</code></dt>
+<dd><p>Converts a bare git repository into a working copy.</p>
+</dd>
+<dt><code>hl4prezi</code></dt>
+<dd><p>Uses pygments to apply syntax highlighting for presentation software.</p>
+</dd>
+<dt><code>idea</code></dt>
+<dd><p>IntelliJ IDEA Starter.</p>
+</dd>
+<dt><code>ls_conf_diff</code></dt>
+<dd><p>Listing modified configuration files on Debian hosts.</p>
+</dd>
+<dt><code>maven_verify_multi_module</code></dt>
+<dd><p>Run a lightweight verify goal on a (complex) Maven multi-module project.</p>
+</dd>
+<dt><code>mp4_to_mp3</code></dt>
+<dd><p>Extracts the audio track of a MP4 video (mp3, bitrate: 192kb).</p>
+</dd>
+<dt><code>show_routes</code></dt>
+<dd><p>Probes and uses different commands for routing table introspection.</p>
+</dd>
+<dt><code>ssh_key_discovery</code></dt>
+<dd><p>Discovers and SSH host to prevent “Host key verification failed.” errors during automatic SSH command executions without human interaction.</p>
+</dd>
+<dt><code>ssl_inspect</code></dt>
+<dd><p>Outputs information about an (HTTP-)SSL certificate of a given hostname.</p>
+</dd>
+<dt><code>stream</code></dt>
+<dd><p>Simple wrapper around <code>mplayer -playlist</code> for listening to shoutcast streams.</p>
+</dd>
+<dt><code>tabs_to_spaces</code></dt>
+<dd><p>Converts tab indentation in files to spaces.</p>
+</dd>
+</dl>
+<h1 id="see-also">SEE ALSO</h1>
+<p>darwin_ramfs_mount(1), darwin_ramfs_umount(1), dotfiles_aliases(7), dreadwarrior_dotfiles(7)</p>
+</body>
+</html>
