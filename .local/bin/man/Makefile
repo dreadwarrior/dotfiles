@@ -16,6 +16,8 @@ section1: maven_verify_multi_module.1 \
 
 section7: dotfiles_commands.7 \
 	dotfiles_commands.7.html \
+	dotfiles_aliases.7 \
+    dotfiles_aliases.7.html \
 	dreadwarrior_dotfiles.7 \
 	dreadwarrior_dotfiles.7.html
 	
