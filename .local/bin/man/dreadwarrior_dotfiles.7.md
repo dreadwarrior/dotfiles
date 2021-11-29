@@ -52,6 +52,13 @@ On **macOS**:
     $ dotfiles_install
     $ $(brew --prefix)/opt/fzf/install
 
+# FEATURES
+
+To quickly allow switching to software development projects in **workspace** or
+**playground** folders the following Bash **CDPATH** is pre-configured:
+
+    export CDPATH="$HOME/workspace:$HOME/playground:$CDPATH"
+
 # SEE ALSO
 
 dotfiles_install(1), yadm(1), dotfiles_aliases(7), dotfiles_commands(7)

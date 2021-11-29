@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="" />
-  <title>dreadwarrior_dotfiles(7) dreadwarrior | dotfiles</title>
+  <title>ssh_key_discovery(1) dreadwarrior | dotfiles</title>
   <style>
     html {
       line-height: 1.5;
@@ -152,54 +152,33 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">dreadwarrior_dotfiles(7) dreadwarrior | dotfiles</h1>
+<h1 class="title">ssh_key_discovery(1) dreadwarrior | dotfiles</h1>
 <p class="author"></p>
 <p class="date">November 2021</p>
 </header>
 <h1 id="name">NAME</h1>
-<p><strong>dreadwarrior’s dotfiles</strong></p>
+<p><strong>ssh_key_discovery</strong> - Discover SSH keys of given hosts.</p>
+<h1 id="synopsis">SYNOPSIS</h1>
+<p><strong><code>ssh_key_discovery</code></strong> <em>hostname-or-ip</em> [<em>hostname-or-ip</em>, …]</p>
 <h1 id="description">DESCRIPTION</h1>
-<p>This project contains configuration files, aliases and useful commands to quickly set up a macOS or Linux-based workstation according to my needs.</p>
-<h1 id="requirements">REQUIREMENTS</h1>
-<ul>
-<li>macOS or Linux</li>
-<li>Bash</li>
-<li>yadm</li>
-<li>Homebrew (macOS)</li>
-</ul>
-<h1 id="installation">INSTALLATION</h1>
-<p>On <strong>Linux</strong>:</p>
-<pre><code>$ sudo apt install yadm
-$ cd $HOME
-$ yadm clone git@github.com:dreadwarrior/dotfiles
-$ # the next step is optional for YADM configuration on a business machine:
-$ yadm config local.class work
-$ yadm alt
-$ source ~/.bashrc
-$ dotfiles_install</code></pre>
-<p>On <strong>macOS</strong>:</p>
-<pre><code># Install Homebrew + yadm
-$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
-$ brew install yadm
-
-# Update bash
-$ brew install bash
-$ sudo bash -c &#39;echo /usr/local/bin/bash &gt;&gt; /etc/shells&#39;
-$ chsh -s /usr/local/bin/bash
-
-# same as on Linux:
-$ cd $HOME
-$ yadm clone git@github.com:dreadwarrior/dotfiles
-$ # the next step is optional for YADM configuration on a business machine:
-$ yadm config local.class work
-$ yadm alt
-$ source ~/.bashrc
-$ dotfiles_install
-$ $(brew --prefix)/opt/fzf/install</code></pre>
-<h1 id="features">FEATURES</h1>
-<p>To quickly allow switching to software development projects in <strong>workspace</strong> or <strong>playground</strong> folders the following Bash <strong>CDPATH</strong> is pre-configured:</p>
-<pre><code>export CDPATH=&quot;$HOME/workspace:$HOME/playground:$CDPATH&quot;</code></pre>
+<p>Discovers and SSH host to prevent “Host key verification failed.” errors during automatic SSH command executions without human interaction.</p>
+<p>It removes and (re-)adds the discovered hosts to the ~/.ssh/known_hosts file of the executing user.</p>
+<h1 id="options">OPTIONS</h1>
+<dl>
+<dt><em>hostname-or-ip</em>, …</dt>
+<dd><p>One or more hostnames or IPs to discover SSH keys for.</p>
+</dd>
+</dl>
+<h1 id="environment-variables">ENVIRONMENT VARIABLES</h1>
+<dl>
+<dt><code>MODE=(hostname|ip)</code></dt>
+<dd><p>Resolves the IP if set to <strong>hostname</strong> or the hostname if set to <strong>ip</strong>. Defaults to (“hostname”).</p>
+</dd>
+</dl>
+<h1 id="examples">EXAMPLES</h1>
+<p>Discover SSH-Keys for a list of IP addresses:</p>
+<pre><code>$ MODE=ip ssh_key_discovery 1.1.1.1 2.2.2.2</code></pre>
 <h1 id="see-also">SEE ALSO</h1>
-<p>dotfiles_install(1), yadm(1), dotfiles_aliases(7), dotfiles_commands(7)</p>
+<p>dig(1), host(1), ssh-keygen(1), ssh-keyscan(1)</p>
 </body>
 </html>

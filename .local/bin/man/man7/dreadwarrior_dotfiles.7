@@ -60,6 +60,17 @@ $ dotfiles_install
 $ $(brew --prefix)/opt/fzf/install
 \f[R]
 .fi
+.SH FEATURES
+.PP
+To quickly allow switching to software development projects in
+\f[B]workspace\f[R] or \f[B]playground\f[R] folders the following Bash
+\f[B]CDPATH\f[R] is pre-configured:
+.IP
+.nf
+\f[C]
+export CDPATH=\[dq]$HOME/workspace:$HOME/playground:$CDPATH\[dq]
+\f[R]
+.fi
 .SH SEE ALSO
 .PP
 dotfiles_install(1), yadm(1), dotfiles_aliases(7), dotfiles_commands(7)
