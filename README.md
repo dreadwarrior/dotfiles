@@ -60,7 +60,7 @@ Commit the tree to the specific branch:
 
 Update references on specific branch:
 
-     git update-ref refs/heads/gh-pages
+     git update-ref refs/heads/gh-pages <Git Commit ID>
 
 The branch is now ready to be pushed to upstream.
 
