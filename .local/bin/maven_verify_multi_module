@@ -49,7 +49,7 @@ _arg_skip_dependencies_tests="false"
 
 
 print_help() {
-  man $(dirname $0)/man/maven_verify_multi_module.1
+  man maven_verify_multi_module 1
 }
 
 
