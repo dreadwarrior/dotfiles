@@ -30,10 +30,6 @@ List of commands shipped with this **dotfiles** instance.
 
 :   Deploy Docker images via scp.
 
-`fixbom`
-
-:   Remove BOM from TYPO3 ReStructuredText documentation files.
-
 `get_random_password`
 
 :   Generate a random password using various shell commands and tools.
@@ -41,10 +37,6 @@ List of commands shipped with this **dotfiles** instance.
 `git_bare_to_normal`
 
 :   Converts a bare git repository into a working copy.
-
-`hl4prezi`
-
-:   Uses pygments to apply syntax highlighting for presentation software.
 
 `idea`
 
@@ -57,10 +49,6 @@ List of commands shipped with this **dotfiles** instance.
 `maven_verify_multi_module`
 
 :   Run a lightweight verify goal on a (complex) Maven multi-module project.
-
-`mp4_to_mp3`
-
-:   Extracts the audio track of a MP4 video (mp3, bitrate: 192kb).
 
 `show_routes`
 
@@ -79,10 +67,8 @@ List of commands shipped with this **dotfiles** instance.
 
 :   Simple wrapper around `mplayer -playlist` for listening to shoutcast streams.
 
-`tabs_to_spaces`
-
-:   Converts tab indentation in files to spaces.
-
 # SEE ALSO
 
-darwin_ramfs_mount(1), darwin_ramfs_umount(1), dotfiles_aliases(7), dreadwarrior_dotfiles(7)
+darwin_ramfs_mount(1), darwin_ramfs_umount(1), docker_scp_deploy(1),
+maven_verify_multi_module(1), ssh_key_discovery(1), dotfiles_aliases(7), 
+dreadwarrior_dotfiles(7)
