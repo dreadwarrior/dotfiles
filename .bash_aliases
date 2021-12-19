@@ -9,7 +9,7 @@ fi
 
 system_type=$(uname -s)
 if [ "$system_type" == "Darwin" ]; then
-  alias ls='ls -G';
+  alias ls='ls -G'
 fi
 
 alias ll='ls -lah'
@@ -33,3 +33,4 @@ alias hosts='vim /etc/hosts'
 
 alias mvmm='maven_verify_multi_module'
 
+alias brewup='brew upgrade ; brew update ; brew upgrade --cask ; brew autoremove ; brew cleanup ;'
