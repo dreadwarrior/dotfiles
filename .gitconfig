@@ -14,6 +14,7 @@
 	lg = !"git lg1"
 	delete-all-tags = !"git tag -l | xargs -n 1 git push --delete origin && git tag | xargs git tag -d"
 	standup = "!f(){ git log --since \"$1\" --author \"$2\" --all; };f"
+  rename-master2main = "!f(){ git branch -m master main && git fetch origin && git branch -u origin/main main && git remote set-head origin -a && git remote prune origin; };f"
 
 [include]
 	path = .gitconfig.local
