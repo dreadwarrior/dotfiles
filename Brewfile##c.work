@@ -1,3 +1,5 @@
+tap "hashicorp/tap"
+
 brew "bash-completion"
 brew "fzf"
 brew "git"
@@ -8,3 +10,4 @@ brew "ronn"
 brew "ssh-copy-id"
 brew "tig"
 brew "wget"
+brew "hashicorp/tap/vault"
