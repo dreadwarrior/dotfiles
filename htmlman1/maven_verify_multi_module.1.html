@@ -31,6 +31,9 @@
         font-size: 0.9em;
         padding: 1em;
       }
+      h1 {
+        font-size: 1.8em;
+      }
     }
     @media print {
       body {
@@ -135,6 +138,12 @@
     #TOC li {
       list-style: none;
     }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
     #TOC a:not(:hover) {
       text-decoration: none;
     }
@@ -152,50 +161,74 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">maven_verify_multi_module(1) dreadwarrior | dotfiles</h1>
+<h1 class="title">maven_verify_multi_module(1) dreadwarrior |
+dotfiles</h1>
 <p class="author"></p>
 <p class="date">November 2021</p>
 </header>
 <h1 id="name">NAME</h1>
-<p><strong>maven_verify_multi_module</strong> - Focused test execution of specific modules in a Maven multi-module project.</p>
+<p><strong>maven_verify_multi_module</strong> - Focused test execution
+of specific modules in a Maven multi-module project.</p>
 <h1 id="synopsis">SYNOPSIS</h1>
-<p><strong><code>maven_verify_multi_module</code></strong> [<code>-g</code> (<code>compile</code>|<code>install</code>)] [<code>-s</code>] [<code>-h</code>] <em>target-module(s)</em></p>
+<p><strong><code>maven_verify_multi_module</code></strong>
+[<code>-g</code> (<code>compile</code>|<code>install</code>)]
+[<code>-s</code>] [<code>-h</code>] <em>target-module(s)</em></p>
 <h1 id="description">DESCRIPTION</h1>
-<p>Running tests on a (complex) Maven multi-module project for a <strong>specifc</strong> target module can be time consuming. This script helps to ‘compile’ or ‘install’ the dependencies for that target module and runs the test of that target module afterwards.</p>
-<p>This helper requires either a local Maven wrapper (mvnw) or a globally installed Maven executable.</p>
+<p>Running tests on a (complex) Maven multi-module project for a
+<strong>specifc</strong> target module can be time consuming. This
+script helps to ‘compile’ or ‘install’ the dependencies for that target
+module and runs the test of that target module afterwards.</p>
+<p>This helper requires either a local Maven wrapper (mvnw) or a
+globally installed Maven executable.</p>
 <h1 id="options">OPTIONS</h1>
 <dl>
-<dt><code>-g</code> (<code>compile</code>|<code>install</code>), <code>--dependencies-goal=</code>(<code>compile</code>|<code>install</code>)</dt>
-<dd><p>Whether to execute the ‘compile’ or ‘install’ goal for the dependencies. (defaults to “compile”)</p>
+<dt><code>-g</code> (<code>compile</code>|<code>install</code>),
+<code>--dependencies-goal=</code>(<code>compile</code>|<code>install</code>)</dt>
+<dd>
+<p>Whether to execute the ‘compile’ or ‘install’ goal for the
+dependencies. (defaults to “compile”)</p>
 </dd>
-<dt><code>-s</code>, <code>--skip-dependencies-tests</code>, <code>--no-skip-dependencies-tests</code></dt>
-<dd><p>Whether to skip tests on dependencies build phase or not. (defaults to “false”)</p>
+<dt><code>-s</code>, <code>--skip-dependencies-tests</code>,
+<code>--no-skip-dependencies-tests</code></dt>
+<dd>
+<p>Whether to skip tests on dependencies build phase or not. (defaults
+to “false”)</p>
 </dd>
 <dt><code>-h</code>, <code>--help</code></dt>
-<dd><p>Prints help</p>
+<dd>
+<p>Prints help</p>
 </dd>
 <dt><em>target-module(s)</em></dt>
-<dd><p>The target module(s) for which the tests should be run for. Comma-separated if multiple modules should be targeted.</p>
+<dd>
+<p>The target module(s) for which the tests should be run for.
+Comma-separated if multiple modules should be targeted.</p>
 </dd>
 </dl>
 <h1 id="exit-status">EXIT STATUS</h1>
 <dl>
 <dt>0</dt>
-<dd><p>successful execution</p>
+<dd>
+<p>successful execution</p>
 </dd>
 <dt>1</dt>
-<dd><p>error while parsing command line arguments</p>
+<dd>
+<p>error while parsing command line arguments</p>
 </dd>
 <dt>64</dt>
-<dd><p>no valid Maven executable found</p>
+<dd>
+<p>no valid Maven executable found</p>
 </dd>
 </dl>
 <h1 id="examples">EXAMPLES</h1>
-<p>If the multi-module project requires to install the dependencies, use the <strong><code>-g</code></strong> argument with the value set to “install”:</p>
+<p>If the multi-module project requires to install the dependencies, use
+the <strong><code>-g</code></strong> argument with the value set to
+“install”:</p>
 <pre><code>$ maven_verify_multi_module -g install my-module-name</code></pre>
-<p>To skip running tests of the target module(s) dependencies use the <strong><code>-s</code></strong> flag:</p>
+<p>To skip running tests of the target module(s) dependencies use the
+<strong><code>-s</code></strong> flag:</p>
 <pre><code>$ maven_verify_multi_module -s my-module-name</code></pre>
-<p>To run <strong>MVVM</strong> for multiple target modules, use a comma-separated list of module names:</p>
+<p>To run <strong>MVVM</strong> for multiple target modules, use a
+comma-separated list of module names:</p>
 <pre><code>$ maven_verify_multi_module mod1,mod2</code></pre>
 <h1 id="see-also">SEE ALSO</h1>
 <p>mvn(1)</p>

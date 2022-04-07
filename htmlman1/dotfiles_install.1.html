@@ -31,6 +31,9 @@
         font-size: 0.9em;
         padding: 1em;
       }
+      h1 {
+        font-size: 1.8em;
+      }
     }
     @media print {
       body {
@@ -135,6 +138,12 @@
     #TOC li {
       list-style: none;
     }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
     #TOC a:not(:hover) {
       text-decoration: none;
     }
@@ -159,9 +168,12 @@
 <h1 id="name">NAME</h1>
 <p><strong>dotfiles_install</strong> - Finish setup of dotfiles.</p>
 <h1 id="synopsis">SYNOPSIS</h1>
-<p><strong><code>dotfiles_install</code></strong> [<code>-p</code>] [<code>-m</code>] [<code>-b</code>] [<code>-f</code>] [<code>-h</code>]</p>
+<p><strong><code>dotfiles_install</code></strong> [<code>-p</code>]
+[<code>-m</code>] [<code>-b</code>] [<code>-f</code>]
+[<code>-h</code>]</p>
 <h1 id="description">DESCRIPTION</h1>
-<p>Finishing the setup of the <strong>dotfiles</strong> installation varies between different operating systems:</p>
+<p>Finishing the setup of the <strong>dotfiles</strong> installation
+varies between different operating systems:</p>
 <p>On <strong>Linux</strong>:</p>
 <ul>
 <li>installation of Moka icon theme</li>
@@ -175,23 +187,40 @@
 <ul>
 <li>installation of <strong>bash-git-prompt</strong></li>
 </ul>
-<p>The installation routine uses a trivial operating system probing routine to protect the user against mutually exclusive installation constellations. E.g. using <strong><code>-b</code></strong> on a non-macOS machine will echo an informational note and skip the installation process of dependencies from Brewfiles.</p>
+<p>The installation routine uses a trivial operating system probing
+routine to protect the user against mutually exclusive installation
+constellations. E.g. using <strong><code>-b</code></strong> on a
+non-macOS machine will echo an informational note and skip the
+installation process of dependencies from Brewfiles.</p>
 <h1 id="options">OPTIONS</h1>
 <dl>
-<dt><code>-p</code>, <code>--bashgitprompt</code>, <code>--no-bashgitprompt</code></dt>
-<dd><p>Whether to install <strong>bash-git-prompt</strong> or not. (defaults to “on”)</p>
+<dt><code>-p</code>, <code>--bashgitprompt</code>,
+<code>--no-bashgitprompt</code></dt>
+<dd>
+<p>Whether to install <strong>bash-git-prompt</strong> or not. (defaults
+to “on”)</p>
 </dd>
-<dt><code>-m</code>, <code>--mokaicontheme</code>, <code>--no-mokaicontheme</code></dt>
-<dd><p>Whether to install the Moka icon theme or not. (defaults to “off”)</p>
+<dt><code>-m</code>, <code>--mokaicontheme</code>,
+<code>--no-mokaicontheme</code></dt>
+<dd>
+<p>Whether to install the Moka icon theme or not. (defaults to
+“off”)</p>
 </dd>
-<dt><code>-b</code>, <code>--brewbundle</code>, <code>--no-brewbundle</code></dt>
-<dd><p>Whether to install brew dependencies from the <strong>Brewfile</strong> or not. (defaults to “off”)</p>
+<dt><code>-b</code>, <code>--brewbundle</code>,
+<code>--no-brewbundle</code></dt>
+<dd>
+<p>Whether to install brew dependencies from the
+<strong>Brewfile</strong> or not. (defaults to “off”)</p>
 </dd>
-<dt><code>-f</code>, <code>--finder</code>, <code>--no-finder</code></dt>
-<dd><p>Whether to configure Finder with some additional settings or not. (defaults to “on”)</p>
+<dt><code>-f</code>, <code>--finder</code>,
+<code>--no-finder</code></dt>
+<dd>
+<p>Whether to configure Finder with some additional settings or not.
+(defaults to “on”)</p>
 </dd>
 <dt><code>-h</code>, <code>--help</code></dt>
-<dd><p>Prints help</p>
+<dd>
+<p>Prints help</p>
 </dd>
 </dl>
 <h1 id="see-also">SEE ALSO</h1>

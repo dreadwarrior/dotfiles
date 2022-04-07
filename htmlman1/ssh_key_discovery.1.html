@@ -31,6 +31,9 @@
         font-size: 0.9em;
         padding: 1em;
       }
+      h1 {
+        font-size: 1.8em;
+      }
     }
     @media print {
       body {
@@ -135,6 +138,12 @@
     #TOC li {
       list-style: none;
     }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
     #TOC a:not(:hover) {
       text-decoration: none;
     }
@@ -157,22 +166,30 @@
 <p class="date">November 2021</p>
 </header>
 <h1 id="name">NAME</h1>
-<p><strong>ssh_key_discovery</strong> - Discover SSH keys of given hosts.</p>
+<p><strong>ssh_key_discovery</strong> - Discover SSH keys of given
+hosts.</p>
 <h1 id="synopsis">SYNOPSIS</h1>
-<p><strong><code>ssh_key_discovery</code></strong> <em>hostname-or-ip</em> [<em>hostname-or-ip</em>, …]</p>
+<p><strong><code>ssh_key_discovery</code></strong>
+<em>hostname-or-ip</em> [<em>hostname-or-ip</em>, …]</p>
 <h1 id="description">DESCRIPTION</h1>
-<p>Discovers and SSH host to prevent “Host key verification failed.” errors during automatic SSH command executions without human interaction.</p>
-<p>It removes and (re-)adds the discovered hosts to the ~/.ssh/known_hosts file of the executing user.</p>
+<p>Discovers and SSH host to prevent “Host key verification failed.”
+errors during automatic SSH command executions without human
+interaction.</p>
+<p>It removes and (re-)adds the discovered hosts to the
+~/.ssh/known_hosts file of the executing user.</p>
 <h1 id="options">OPTIONS</h1>
 <dl>
 <dt><em>hostname-or-ip</em>, …</dt>
-<dd><p>One or more hostnames or IPs to discover SSH keys for.</p>
+<dd>
+<p>One or more hostnames or IPs to discover SSH keys for.</p>
 </dd>
 </dl>
 <h1 id="environment-variables">ENVIRONMENT VARIABLES</h1>
 <dl>
 <dt><code>MODE=(hostname|ip)</code></dt>
-<dd><p>Resolves the IP if set to <strong>hostname</strong> or the hostname if set to <strong>ip</strong>. Defaults to (“hostname”).</p>
+<dd>
+<p>Resolves the IP if set to <strong>hostname</strong> or the hostname
+if set to <strong>ip</strong>. Defaults to (“hostname”).</p>
 </dd>
 </dl>
 <h1 id="examples">EXAMPLES</h1>

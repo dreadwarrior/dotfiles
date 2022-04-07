@@ -11,6 +11,8 @@ section1: maven_verify_multi_module.1 \
 	darwin_ramfs_umount.1.html \
 	docker_scp_deploy.1 \
 	docker_scp_deploy.1.html \
+	fif.1 \
+	fif.1.html \
 	ssh_key_discovery.1 \
 	ssh_key_discovery.1.html \
 	dotfiles_install.1 \

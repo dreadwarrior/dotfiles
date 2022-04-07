@@ -31,6 +31,9 @@
         font-size: 0.9em;
         padding: 1em;
       }
+      h1 {
+        font-size: 1.8em;
+      }
     }
     @media print {
       body {
@@ -135,6 +138,12 @@
     #TOC li {
       list-style: none;
     }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
     #TOC a:not(:hover) {
       text-decoration: none;
     }
@@ -157,34 +166,48 @@
 <p class="date">November 2021</p>
 </header>
 <h1 id="name">NAME</h1>
-<p><strong>docker_scp_deploy</strong> - Deploy Docker images via scp.</p>
+<p><strong>docker_scp_deploy</strong> - Deploy Docker images via
+scp.</p>
 <h1 id="synopsis">SYNOPSIS</h1>
-<p><strong><code>docker_scp_deploy</code></strong> <em>save-path</em> <em>image-name</em> <em>ssh-user</em> <em>ssh-host</em> <em>remote-path</em></p>
+<p><strong><code>docker_scp_deploy</code></strong> <em>save-path</em>
+<em>image-name</em> <em>ssh-user</em> <em>ssh-host</em>
+<em>remote-path</em></p>
 <h1 id="description">DESCRIPTION</h1>
-<p>Deploy a Docker image to a remote host via SCP without uploading to a registry.</p>
+<p>Deploy a Docker image to a remote host via SCP without uploading to a
+registry.</p>
 <h1 id="options">OPTIONS</h1>
 <dl>
 <dt><em>save-path</em></dt>
-<dd><p>Path to the file where the <em>image-name</em> will be saved on the local host.</p>
+<dd>
+<p>Path to the file where the <em>image-name</em> will be saved on the
+local host.</p>
 </dd>
 <dt><em>image-name</em></dt>
-<dd><p>Name of the image which was built locally.</p>
+<dd>
+<p>Name of the image which was built locally.</p>
 </dd>
 <dt><em>ssh-user</em></dt>
-<dd><p>Username used for connecting to remote host.</p>
+<dd>
+<p>Username used for connecting to remote host.</p>
 </dd>
 <dt><em>ssh-host</em></dt>
-<dd><p>Remote hostname.</p>
+<dd>
+<p>Remote hostname.</p>
 </dd>
 <dt><em>remote-path</em></dt>
-<dd><p>Path where the image should be saved.</p>
+<dd>
+<p>Path where the image should be saved.</p>
 </dd>
 </dl>
 <h1 id="examples">EXAMPLES</h1>
-<p>The locally built <code>my-app:latest</code> Docker image is saved in the file <code>my-app.tar.gz</code> in the current directory. It is uploaded as user <code>ci</code> to the host <code>my-app.com</code> into the remote folder <code>builds/</code>:</p>
+<p>The locally built <code>my-app:latest</code> Docker image is saved in
+the file <code>my-app.tar.gz</code> in the current directory. It is
+uploaded as user <code>ci</code> to the host <code>my-app.com</code>
+into the remote folder <code>builds/</code>:</p>
 <pre><code>$ docker_scp_deploy my-app.tar.gz my-app:latest ci my-app.com builds/</code></pre>
 <h1 id="bugs">BUGS</h1>
-<p>The uploaded image is currently not removed. Please ensure you login regularly and cleanup the target folder(s) manually.</p>
+<p>The uploaded image is currently not removed. Please ensure you login
+regularly and cleanup the target folder(s) manually.</p>
 <h1 id="see-also">SEE ALSO</h1>
 <p>scp(1), ssh(1)</p>
 </body>
