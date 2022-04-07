@@ -31,6 +31,9 @@
         font-size: 0.9em;
         padding: 1em;
       }
+      h1 {
+        font-size: 1.8em;
+      }
     }
     @media print {
       body {
@@ -135,6 +138,12 @@
     #TOC li {
       list-style: none;
     }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
     #TOC a:not(:hover) {
       text-decoration: none;
     }
@@ -157,15 +166,18 @@
 <p class="date">November 2021</p>
 </header>
 <h1 id="name">NAME</h1>
-<p><strong>darwin_ramfs_umount</strong> - Unmount and detach a RAM disk on macOS.</p>
+<p><strong>darwin_ramfs_umount</strong> - Unmount and detach a RAM disk
+on macOS.</p>
 <h1 id="synopsis">SYNOPSIS</h1>
-<p><strong><code>darwin_ramfs_umount</code></strong> <em>directory</em></p>
+<p><strong><code>darwin_ramfs_umount</code></strong>
+<em>directory</em></p>
 <h1 id="description">DESCRIPTION</h1>
 <p>Unmount and detach a RAM disk on macOS.</p>
 <h1 id="options">OPTIONS</h1>
 <dl>
 <dt><em>directory</em></dt>
-<dd><p>Directory where the RAM disk is mounted to.</p>
+<dd>
+<p>Directory where the RAM disk is mounted to.</p>
 </dd>
 </dl>
 <h1 id="see-also">SEE ALSO</h1>

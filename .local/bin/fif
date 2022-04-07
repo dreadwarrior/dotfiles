@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+#
+# -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-
+# vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:
+#
+# using ripgrep combined with preview
+# find-in-file - usage: fif <searchTerm>
+#
+# @source: https://github.com/junegunn/fzf/wiki/examples#searching-file-contents
+
+fif() {
+  if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
+
+  rg --files-with-matches --no-messages "$1" | \
+    fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
+}

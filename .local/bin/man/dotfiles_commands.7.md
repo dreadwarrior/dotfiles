@@ -30,6 +30,10 @@ List of commands shipped with this **dotfiles** instance.
 
 :   Deploy Docker images via scp.
 
+`fif`
+
+:   Search for file contents with `fzf` and ripgrep (`rg`).
+
 `get_random_password`
 
 :   Generate a random password using various shell commands and tools.
@@ -69,6 +73,6 @@ List of commands shipped with this **dotfiles** instance.
 
 # SEE ALSO
 
-darwin_ramfs_mount(1), darwin_ramfs_umount(1), docker_scp_deploy(1),
+darwin_ramfs_mount(1), darwin_ramfs_umount(1), docker_scp_deploy(1), fif(1),
 maven_verify_multi_module(1), ssh_key_discovery(1), dotfiles_aliases(7), 
 dreadwarrior_dotfiles(7)

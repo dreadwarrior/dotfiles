@@ -29,6 +29,7 @@ The manpages.
 * [darwin_ramfs_mount(1)](./htmlman1/darwin_ramfs_mount.1.html)
 * [darwin_ramfs_umount(1)](./htmlman1/darwin_ramfs_mount.1.html)
 * [docker_scp_deploy(1)](./htmlman1/docker_scp_deploy.1.html)
+* [fif(1)](./htmlman1/fif.1.html)
 * [maven_verify_multi_module(1)](./htmlman1/maven_verify_multi_module.1.html)
 * [ssh_key_discovery(1)](./htmlman1/ssh_key_discovery.1.html)
 

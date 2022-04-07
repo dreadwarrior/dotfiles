@@ -31,6 +31,9 @@
         font-size: 0.9em;
         padding: 1em;
       }
+      h1 {
+        font-size: 1.8em;
+      }
     }
     @media print {
       body {
@@ -135,6 +138,12 @@
     #TOC li {
       list-style: none;
     }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
     #TOC a:not(:hover) {
       text-decoration: none;
     }
@@ -159,52 +168,81 @@
 <h1 id="name">NAME</h1>
 <p><strong>dotfiles commands</strong></p>
 <h1 id="description">DESCRIPTION</h1>
-<p>List of commands shipped with this <strong>dotfiles</strong> instance.</p>
+<p>List of commands shipped with this <strong>dotfiles</strong>
+instance.</p>
 <dl>
 <dt><code>brew_fix_sslread</code></dt>
-<dd><p>Fixes “SSLRead() return error -9806” on macOS using brew.</p>
+<dd>
+<p>Fixes “SSLRead() return error -9806” on macOS using brew.</p>
 </dd>
 <dt><code>darwin_ramfs_mount</code></dt>
-<dd><p>Create and mount a RAM disk on macOS.</p>
+<dd>
+<p>Create and mount a RAM disk on macOS.</p>
 </dd>
 <dt><code>drawin_ramfs_umount</code></dt>
-<dd><p>Unmount and detach a RAM disk on macOS.</p>
+<dd>
+<p>Unmount and detach a RAM disk on macOS.</p>
 </dd>
 <dt><code>darwin_readlink</code></dt>
-<dd><p><code>readlink -f</code> alternative on macOS hosts.</p>
+<dd>
+<p><code>readlink -f</code> alternative on macOS hosts.</p>
 </dd>
 <dt><code>docker_scp_deploy</code></dt>
-<dd><p>Deploy Docker images via scp.</p>
+<dd>
+<p>Deploy Docker images via scp.</p>
+</dd>
+<dt><code>fif</code></dt>
+<dd>
+<p>Search for file contents with <code>fzf</code> and ripgrep
+(<code>rg</code>).</p>
 </dd>
 <dt><code>get_random_password</code></dt>
-<dd><p>Generate a random password using various shell commands and tools.</p>
+<dd>
+<p>Generate a random password using various shell commands and
+tools.</p>
 </dd>
 <dt><code>git_bare_to_normal</code></dt>
-<dd><p>Converts a bare git repository into a working copy.</p>
+<dd>
+<p>Converts a bare git repository into a working copy.</p>
 </dd>
 <dt><code>idea</code></dt>
-<dd><p>IntelliJ IDEA Starter.</p>
+<dd>
+<p>IntelliJ IDEA Starter.</p>
 </dd>
 <dt><code>ls_conf_diff</code></dt>
-<dd><p>Listing modified configuration files on Debian hosts.</p>
+<dd>
+<p>Listing modified configuration files on Debian hosts.</p>
 </dd>
 <dt><code>maven_verify_multi_module</code></dt>
-<dd><p>Run a lightweight verify goal on a (complex) Maven multi-module project.</p>
+<dd>
+<p>Run a lightweight verify goal on a (complex) Maven multi-module
+project.</p>
 </dd>
 <dt><code>show_routes</code></dt>
-<dd><p>Probes and uses different commands for routing table introspection.</p>
+<dd>
+<p>Probes and uses different commands for routing table
+introspection.</p>
 </dd>
 <dt><code>ssh_key_discovery</code></dt>
-<dd><p>Discovers and SSH host to prevent “Host key verification failed.” errors during automatic SSH command executions without human interaction.</p>
+<dd>
+<p>Discovers and SSH host to prevent “Host key verification failed.”
+errors during automatic SSH command executions without human
+interaction.</p>
 </dd>
 <dt><code>ssl_inspect</code></dt>
-<dd><p>Outputs information about an (HTTP-)SSL certificate of a given hostname.</p>
+<dd>
+<p>Outputs information about an (HTTP-)SSL certificate of a given
+hostname.</p>
 </dd>
 <dt><code>stream</code></dt>
-<dd><p>Simple wrapper around <code>mplayer -playlist</code> for listening to shoutcast streams.</p>
+<dd>
+<p>Simple wrapper around <code>mplayer -playlist</code> for listening to
+shoutcast streams.</p>
 </dd>
 </dl>
 <h1 id="see-also">SEE ALSO</h1>
-<p>darwin_ramfs_mount(1), darwin_ramfs_umount(1), docker_scp_deploy(1), maven_verify_multi_module(1), ssh_key_discovery(1), dotfiles_aliases(7), dreadwarrior_dotfiles(7)</p>
+<p>darwin_ramfs_mount(1), darwin_ramfs_umount(1), docker_scp_deploy(1),
+maven_verify_multi_module(1), ssh_key_discovery(1), dotfiles_aliases(7),
+dreadwarrior_dotfiles(7)</p>
 </body>
 </html>

@@ -31,6 +31,9 @@
         font-size: 0.9em;
         padding: 1em;
       }
+      h1 {
+        font-size: 1.8em;
+      }
     }
     @media print {
       body {
@@ -135,6 +138,12 @@
     #TOC li {
       list-style: none;
     }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
     #TOC a:not(:hover) {
       text-decoration: none;
     }
@@ -159,7 +168,9 @@
 <h1 id="name">NAME</h1>
 <p><strong>dreadwarrior’s dotfiles</strong></p>
 <h1 id="description">DESCRIPTION</h1>
-<p>This project contains configuration files, aliases and useful commands to quickly set up a macOS or Linux-based workstation according to my needs.</p>
+<p>This project contains configuration files, aliases and useful
+commands to quickly set up a macOS or Linux-based workstation according
+to my needs.</p>
 <h1 id="requirements">REQUIREMENTS</h1>
 <ul>
 <li>macOS or Linux</li>
@@ -197,9 +208,12 @@ $ source ~/.bashrc
 $ dotfiles_install
 $ $(brew --prefix)/opt/fzf/install</code></pre>
 <h1 id="features">FEATURES</h1>
-<p>To quickly allow switching to software development projects in <strong>workspace</strong> or <strong>playground</strong> folders the following Bash <strong>CDPATH</strong> is pre-configured:</p>
+<p>To quickly allow switching to software development projects in
+<strong>workspace</strong> or <strong>playground</strong> folders the
+following Bash <strong>CDPATH</strong> is pre-configured:</p>
 <pre><code>export CDPATH=&quot;$HOME/workspace:$HOME/playground:$CDPATH&quot;</code></pre>
 <h1 id="see-also">SEE ALSO</h1>
-<p>dotfiles_install(1), yadm(1), dotfiles_aliases(7), dotfiles_commands(7)</p>
+<p>dotfiles_install(1), yadm(1), dotfiles_aliases(7),
+dotfiles_commands(7)</p>
 </body>
 </html>
