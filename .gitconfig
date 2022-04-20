@@ -1,25 +1,24 @@
 [color]
-	ui = true
+    ui = true
 
 [branch]
-	autosetuprebase = remote
+    autosetuprebase = remote
 
 [core]
-	editor = vi
-	autocrlf = input
+    editor = vi
+    autocrlf = input
 
 [alias]
-	lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
-	lg = !"git lg1"
-	delete-all-tags = !"git tag -l | xargs -n 1 git push --delete origin && git tag | xargs git tag -d"
-	standup = "!f(){ git log --since \"$1\" --author \"$2\" --all; };f"
-  rename-master2main = "!f(){ git branch -m master main && git fetch origin && git branch -u origin/main main && git remote set-head origin -a && git remote prune origin; };f"
-  aliases = "!f(){ git config --get-regexp '^alias\\.'; };f"
+    lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+    lg = !"git lg1"
+    delete-all-tags = !"git tag -l | xargs -n 1 git push --delete origin && git tag | xargs git tag -d"
+    standup = "!f(){ git log --since \"$1\" --author \"$2\" --all; };f"
+    rename-master2main = "!f(){ git branch -m master main && git fetch origin && git branch -u origin/main main && git remote set-head origin -a && git remote prune origin; };f"
+    aliases = "!f(){ git config --get-regexp '^alias\\.'; };f"
 
 [include]
-	path = .gitconfig.local
+    path = .gitconfig.local
 
 [init]
-  defaultBranch = main
-
+    defaultBranch = main

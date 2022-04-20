@@ -1,7 +1,7 @@
 [user]
-	name = Thomas Juhnke
-	email = contact@dreadlabs.de
+    name = Thomas Juhnke
+    email = contact@dreadlabs.de
 
 [core]
-	excludesfile = ~/.gitignore_global
+    excludesfile = ~/.gitignore_global
 
