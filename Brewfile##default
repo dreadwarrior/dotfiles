@@ -1,6 +1,7 @@
 brew "ansible"
 brew "asciinema"
 brew "bash-completion"
+brew "dive"
 brew "exercism"
 brew "fzf"
 brew "git"

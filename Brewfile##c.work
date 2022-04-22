@@ -3,6 +3,7 @@ tap "homebrew/cask-fonts"
 
 brew "bash-completion"
 brew "bat"
+brew "dive"
 brew "fzf"
 brew "git"
 brew "gnupg"
