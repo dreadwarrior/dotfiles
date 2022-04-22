@@ -1,3 +1,5 @@
+# shellcheck shell=bash
+
 # -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-
 # vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:
 
@@ -14,7 +16,7 @@ fi
 
 # Bash completion for Mac
 # Check if brew is available (@see http://stackoverflow.com/a/677212)
-if [[ "`type brew 2>/dev/null`" && -f `brew --prefix`/etc/bash_completion ]]; then
-  . `brew --prefix`/etc/bash_completion
+if [[ "$(type brew 2>/dev/null)" && -f "$(brew --prefix)/etc/bash_completion" ]]; then
+  . "$(brew --prefix)/etc/bash_completion"
 fi
 
