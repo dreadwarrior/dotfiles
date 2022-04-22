@@ -20,3 +20,7 @@ if [[ "$(type brew 2>/dev/null)" && -f "$(brew --prefix)/etc/bash_completion" ]]
   . "$(brew --prefix)/etc/bash_completion"
 fi
 
+# kubectl completion
+if command -v kubectl &> /dev/null; then
+  source <(kubectl completion bash)
+fi
