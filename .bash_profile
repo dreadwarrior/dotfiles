@@ -1,4 +1,8 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# eval Brew shellenv on Apple M1 only
+system_arch=$(uname -m)
+if [ "$system_arch" = "arm64" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 if [ -f ~/.bashrc ]; then
     source ~/.bashrc
