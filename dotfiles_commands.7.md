@@ -1,6 +1,6 @@
 % dotfiles_commands(7) dreadwarrior | dotfiles
 %
-% November 2021
+% September 2022
 
 # NAME
 
