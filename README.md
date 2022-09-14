@@ -77,6 +77,8 @@ The branch is now ready to be pushed to upstream.
   
      - make man pages
      - improve Makefile (ask @jami for help)
+       - e.g. `MANSECTION=7 make section7` necessary
+     - explain requirements (ronn, pandoc)
 
 ## Links / Notes
 
