@@ -9,6 +9,13 @@
 #
 # https://twitter.com/gunnarmorling/status/1463792047316520965
 
+# Enabling trace
+#set -x
+
+_fmt_red=$(tput setaf 1)
+_fmt_blue=$(tput setaf 4)
+_fmt_normal=$(tput sgr0)
+
 # ARG_OPTIONAL_SINGLE([dependencies-goal],[g],[Whether to execute the compile or install goal for the dependencies.], [compile])
 # ARG_OPTIONAL_BOOLEAN([skip-dependencies-tests],[s],[Whether to skip tests on dependencies build phase or not.], [])
 # ARG_POSITIONAL_SINGLE([target-modules],[The target modules for which the tests should be run for.],[])
@@ -19,13 +26,6 @@
 # Argbash is a bash code generator used to get arguments parsing right.
 # Argbash is FREE SOFTWARE, see https://argbash.io for more info
 # Generated online by https://argbash.io/generate
-
-# Enabling trace
-#set -x
-
-_fmt_red=$(tput setaf 1)
-_fmt_blue=$(tput setaf 4)
-_fmt_normal=$(tput sgr0)
 
 die() {
   local _ret="${2:-1}"
