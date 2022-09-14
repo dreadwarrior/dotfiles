@@ -16,7 +16,9 @@ section1: maven_verify_multi_module.1 \
 	ssh_key_discovery.1 \
 	ssh_key_discovery.1.html \
 	dotfiles_install.1 \
-	dotfiles_install.1.html
+	dotfiles_install.1.html \
+	pdb_diff.1 \
+	pdb_diff.1.html
 
 section7: dotfiles_commands.7 \
 	dotfiles_commands.7.html \
