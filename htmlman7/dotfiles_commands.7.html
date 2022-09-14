@@ -149,10 +149,15 @@
     }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <!--[if lt IE 9]>
@@ -218,6 +223,11 @@ tools.</p>
 <p>Run a lightweight verify goal on a (complex) Maven multi-module
 project.</p>
 </dd>
+<dt><code>pdb_diff</code></dt>
+<dd>
+<p>Export KeepassXC database to CSV and diff with <code>idea</code>
+command.</p>
+</dd>
 <dt><code>show_routes</code></dt>
 <dd>
 <p>Probes and uses different commands for routing table
@@ -242,7 +252,7 @@ shoutcast streams.</p>
 </dl>
 <h1 id="see-also">SEE ALSO</h1>
 <p>darwin_ramfs_mount(1), darwin_ramfs_umount(1), docker_scp_deploy(1),
-maven_verify_multi_module(1), ssh_key_discovery(1), dotfiles_aliases(7),
-dreadwarrior_dotfiles(7)</p>
+fif(1), maven_verify_multi_module(1), pdb_diff(1), ssh_key_discovery(1),
+dotfiles_aliases(7), dreadwarrior_dotfiles(7)</p>
 </body>
 </html>
