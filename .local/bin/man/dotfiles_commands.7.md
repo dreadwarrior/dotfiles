@@ -54,6 +54,10 @@ List of commands shipped with this **dotfiles** instance.
 
 :   Run a lightweight verify goal on a (complex) Maven multi-module project.
 
+`pdb_diff`
+
+:   Export KeepassXC database to CSV and diff with `idea` command.
+
 `show_routes`
 
 :   Probes and uses different commands for routing table introspection.
@@ -74,5 +78,5 @@ List of commands shipped with this **dotfiles** instance.
 # SEE ALSO
 
 darwin_ramfs_mount(1), darwin_ramfs_umount(1), docker_scp_deploy(1), fif(1),
-maven_verify_multi_module(1), ssh_key_discovery(1), dotfiles_aliases(7), 
-dreadwarrior_dotfiles(7)
+maven_verify_multi_module(1), pdb_diff(1), ssh_key_discovery(1), 
+dotfiles_aliases(7), dreadwarrior_dotfiles(7)
