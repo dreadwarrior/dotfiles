@@ -73,11 +73,17 @@ The branch is now ready to be pushed to upstream.
 
   2. Integrate global system name probing (`uname -s`), individual usage by `dotfiles-install/*` scripts
 
+  3. Introduce *dev* section
+  
+     - make man pages
+     - improve Makefile (ask @jami for help)
+
 ## Links / Notes
 
   - [Upgrade to bash 4 in Mac OS X](http://clubmate.fi/upgrade-to-bash-4-in-mac-os-x/)
   - `⌘ CMD`+`⇧ SHIFT`+`.` Reveals hidden files in Open/Save dialogs on Mac OS
   - [Spring-Cleaning Homebrew Dependencies](http://patricklenz.co/blog/2012/5/21/spring-cleaning-homebrew-dependencies)
+  - [Standard Exit Status Codes in Linux](https://www.baeldung.com/linux/status-codes)
 
 
 [yadm]: https://github.com/TheLocehiliosan/yadm
