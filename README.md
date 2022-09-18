@@ -41,7 +41,44 @@
     ~$ dotfiles_install
     ~$ $(brew --prefix)/opt/fzf/install
 
-## Upgrade gh-pages branch
+## Development
+
+### Requirements
+
+     brew install pandoc shellcheck
+
+### Update `.local/bin`-commands
+
+- use Posix shell style whenever possible
+- consider using [Argbash](https://argbash.io/) if argument and option handling is needed (non-Posix style only :/)
+- use `shellcheck` for linting
+- don't forget `chmod u+x`
+- add [Pandoc compatible](https://pandoc.org/) man page markdown source in `/man` subdirectory
+- optional:
+  - adjust `dotfiles_commands.7.md` with link to new man page
+  - adjust `index.md` with link to new man page
+
+#### Build man pages
+
+     make clean all
+
+#### Add new man page sections
+
+1. Add new variables with appropriate values (use existing ones as examples):
+
+       BUILD_DIR_MAN_SECTIONnnn
+       BUILD_DIR_HTM_SECTIONnnn
+       SRCS_SECTIONnnn
+       OBJS_MAN_SECTIONnnn
+       OBJS_HTM_SECTIONnnn
+
+   Where _nnn_ reflects the new [section](https://en.wikipedia.org/wiki/Man_page#Manual_sections) (e.g. "2").
+
+2. Add new `OBJS_` variables to `all`-target:
+3. Add new rules for `BUILD_DIR_MAN_` and `BUILD_DIR__HTM_` targets
+4. Adjust `clean target` for cleaning up new build dirs
+
+#### Upgrade gh-pages branch
 
 Create new branch if not existing already in the repository:
 
@@ -73,13 +110,6 @@ The branch is now ready to be pushed to upstream.
 
   2. Integrate global system name probing (`uname -s`), individual usage by `dotfiles-install/*` scripts
 
-  3. Introduce *dev* section
-  
-     - make man pages
-     - improve Makefile (ask @jami for help)
-       - e.g. `MANSECTION=7 make section7` necessary
-     - explain requirements (ronn, pandoc)
-
 ## Links / Notes
 
   - [Upgrade to bash 4 in Mac OS X](http://clubmate.fi/upgrade-to-bash-4-in-mac-os-x/)
@@ -89,4 +119,3 @@ The branch is now ready to be pushed to upstream.
 
 
 [yadm]: https://github.com/TheLocehiliosan/yadm
-
