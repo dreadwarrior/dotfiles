@@ -34,3 +34,5 @@ alias hosts='vim /etc/hosts'
 alias mvmm='maven_verify_multi_module'
 
 alias brewup='brew upgrade ; brew update ; brew upgrade --cask ; brew autoremove ; brew cleanup ;'
+# brew (a)nalyze (dependencies)
+alias brewad='brew leaves | xargs brew deps --installed --for-each | sed "s/^.*:/$(tput setaf 4)&$(tput sgr0)/"'
