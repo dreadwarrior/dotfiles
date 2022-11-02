@@ -22,3 +22,4 @@ brew "wget"
 
 cask "font-eb-garamond"
 cask "font-fira-code"
+cask "font-roboto-slab"
