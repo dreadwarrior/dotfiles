@@ -1,3 +1,5 @@
+tap "homebrew/cask-fonts"
+
 brew "ansible"
 brew "asciinema"
 brew "bash-completion"
@@ -17,3 +19,5 @@ brew "ssh-copy-id"
 brew "tig"
 brew "tldr"
 brew "wget"
+
+cask "font-fira-code"
