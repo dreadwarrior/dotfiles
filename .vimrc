@@ -62,7 +62,7 @@ set list
 set list listchars=tab:>-,trail:.,extends:>,eol:¶
 
 " Set right margin ("color column")
-set cc=72
+set cc=50,72
 
 " Add underline to the current line
 set cursorline
