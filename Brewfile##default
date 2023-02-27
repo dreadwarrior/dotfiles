@@ -1,7 +1,7 @@
 tap "homebrew/cask-fonts"
 
-brew "ansible"
-brew "asciinema"
+# brew "ansible"
+# brew "asciinema"
 brew "bash-completion"
 brew "bat"
 brew "dive"
