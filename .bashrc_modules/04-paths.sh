@@ -6,6 +6,7 @@ if [ -d ${HOME}/.local/bin ]; then
   PATH="${HOME}/.local/bin:${PATH}"
 fi
 
+# Add `bin` of current working directory to PATH
 PATH="./bin:$PATH"
 
 export CDPATH="$HOME/workspace:$HOME/playground:$CDPATH"
