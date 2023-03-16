@@ -26,7 +26,6 @@ alias qloc='find . -type f -exec wc -l {} + | sort -rn'
 alias rmi='rm -i'
 
 # "Watch log"
-#
 alias wlog='less +F'
 
 alias hosts='vim /etc/hosts'
@@ -34,5 +33,8 @@ alias hosts='vim /etc/hosts'
 alias mvmm='maven_verify_multi_module'
 
 alias brewup='brew upgrade ; brew update ; brew upgrade --cask ; brew autoremove ; brew cleanup ;'
-# brew (a)nalyze (dependencies)
+# brew (a)nalyze (d)ependencies
 alias brewad='brew leaves | xargs brew deps --installed --for-each | sed "s/^.*:/$(tput setaf 4)&$(tput sgr0)/"'
+
+# (p)rint CalVer string of current UTC date in format yyyy.mm.dd.hhmm, e.g. 2023.03.16.0822
+alias pcalver='date -u +'\''%Y.%m.%d.%H%M'\'
