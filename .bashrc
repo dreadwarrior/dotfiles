@@ -11,15 +11,15 @@ case $- in
       *) return;;
 esac
 
-source $HOME/.bashrc_modules/00-shell_options.sh
-source $HOME/.bashrc_modules/01-history_control.sh
-source $HOME/.bashrc_modules/02-color_prompt.sh
-source $HOME/.bashrc_modules/03-readline.sh
-source $HOME/.bashrc_modules/04-paths.sh
-source $HOME/.bashrc_modules/05-completion.sh
+source $HOME/.bashrc_modules/shell_options.sh
+source $HOME/.bashrc_modules/history_control.sh
+source $HOME/.bashrc_modules/color_prompt.sh
+source $HOME/.bashrc_modules/readline.sh
+source $HOME/.bashrc_modules/paths.sh
+source $HOME/.bashrc_modules/completion.sh
 
-if [ -f $HOME/.bashrc_modules/06-token.sh ]; then
-  source $HOME/.bashrc_modules/06-token.sh
+if [ -f $HOME/.bashrc_modules/brew-github-token.sh ]; then
+  source $HOME/.bashrc_modules/brew-github-token.sh
 fi
 
 # make less more friendly for non-text input files, see lesspipe(1)
