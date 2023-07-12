@@ -12,6 +12,7 @@ case $- in
 esac
 
 source $HOME/.bashrc_modules/shell_options.sh
+source $HOME/.bashrc_modules/shell_editor.sh
 source $HOME/.bashrc_modules/history_control.sh
 source $HOME/.bashrc_modules/color_prompt.sh
 source $HOME/.bashrc_modules/readline.sh
