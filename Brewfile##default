@@ -21,6 +21,7 @@ brew "ssh-copy-id"
 brew "tig"
 brew "tldr"
 brew "wget"
+brew "yq"
 
 cask "font-eb-garamond"
 cask "font-fira-code"
