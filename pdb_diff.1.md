@@ -4,8 +4,7 @@
 
 # NAME
 
-**pdb_diff** - Export KeepassXC database to CSV and diff with
-               `idea` command.
+**pdb_diff** - Export KeepassXC database to CSV and diff with `vimdiff`.
 
 # SYNOPSIS
 
@@ -75,5 +74,5 @@ _fileb_
 
 # SEE ALSO
 
-idea(1)
+vimdiff(1)
 
