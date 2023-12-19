@@ -42,10 +42,6 @@ List of commands shipped with this **dotfiles** instance.
 
 :   Converts a bare git repository into a working copy.
 
-`idea`
-
-:   IntelliJ IDEA Starter.
-
 `ls_conf_diff`
 
 :   Listing modified configuration files on Debian hosts.
@@ -56,7 +52,7 @@ List of commands shipped with this **dotfiles** instance.
 
 `pdb_diff`
 
-:   Export KeepassXC database to CSV and diff with `idea` command.
+:   Export KeepassXC database to CSV and diff with `vimdiff`.
 
 `show_routes`
 

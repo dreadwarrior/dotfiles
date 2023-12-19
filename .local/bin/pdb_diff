@@ -3,7 +3,7 @@
 # -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-
 # vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:
 #
-# Export KeepassXC database to CSV and diff with `idea` command
+# Export KeepassXC database to CSV and diff with `vimdiff`.
 
 _fmt_red=$(tput setaf 1)
 _fmt_blue=$(tput setaf 4)
@@ -140,7 +140,7 @@ if [ "$system_type" = "Darwin" ]; then
   if type "$_keepassxccli_path" &> /dev/null; then
     "$_keepassxccli_path" export --format csv "$_arg_filea" > pdb-1.csv
     "$_keepassxccli_path" export --format csv "$_arg_fileb" > pdb-2.csv
-    idea diff pdb-1.csv pdb-2.csv
+    vimdiff pdb-1.csv pdb-2.csv
 
     read -p "Press any key to cleanup export files... " -n1 -s
     echo
