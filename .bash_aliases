@@ -42,4 +42,4 @@ alias pcalver='date -u +'\''%Y.%m.%d.%H%M'\'
 alias putsms='gdate +%s%3N'
 
 # Execute Maven skipping TRACE, DEBUG, INFO leveled logs
-alias mvnw='mvn -Dorg.slf4j.simpleLogger.defaultLogLevel=warn'
+alias mvw='mvn -Dorg.slf4j.simpleLogger.defaultLogLevel=warn'
