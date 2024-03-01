@@ -23,3 +23,6 @@ export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 if command -v kubectl &> /dev/null; then
   source <(kubectl completion bash)
 fi
+
+# go-task completion
+source $(brew ls go-task | grep --color=never bash_completion)
