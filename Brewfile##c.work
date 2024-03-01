@@ -1,7 +1,7 @@
 tap "hashicorp/tap"
 tap "homebrew/cask-fonts"
 
-brew "bash-completion"
+brew "bash-completion@2"
 brew "bat"
 brew "coreutils"
 brew "dive"
