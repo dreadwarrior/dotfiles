@@ -25,4 +25,6 @@ if command -v kubectl &> /dev/null; then
 fi
 
 # go-task completion
-source $(brew ls go-task | grep --color=never bash_completion)
+if [[ "$(type task 2>/dev/null)" ]]; then
+  source $(brew ls go-task | grep --color=never bash_completion)
+fi
