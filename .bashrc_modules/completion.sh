@@ -17,7 +17,7 @@ fi
 # Bash completion for Mac
 # Check if brew is available (@see http://stackoverflow.com/a/677212)
 export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
-[[ "$(type brew 2>/dev/null)" && -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+[[ "$(type brew 2>/dev/null)" && -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 
 # kubectl completion
 if command -v kubectl &> /dev/null; then
