@@ -20,5 +20,6 @@ brew "tldr"
 brew "wget"
 
 cask "font-fira-code"
+cask "keycastr"
 cask "maccy"
 cask "rectangle"
