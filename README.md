@@ -45,7 +45,9 @@
 
 ### Requirements
 
-     brew install pandoc shellcheck
+- Pandoc, e.g. via Homebrew `brew install pandoc`
+- ShellCheck, e.g. via Homebrew `brew install shellcheck`
+- JBang, e.g. via [SDKMAN!](https://sdkman.io/install)
 
 ### Update `.local/bin`-commands
 
