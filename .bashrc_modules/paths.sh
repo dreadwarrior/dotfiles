@@ -9,4 +9,7 @@ fi
 # Add `bin` of current working directory to PATH
 PATH="./bin:$PATH"
 
+# Add JBang to environment
+export PATH="$HOME/.jbang/bin:$PATH"
+
 export CDPATH="$HOME/workspace:$HOME/playground:$CDPATH"

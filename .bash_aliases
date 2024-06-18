@@ -43,3 +43,6 @@ alias putsms='gdate +%s%3N'
 
 # Execute Maven skipping TRACE, DEBUG, INFO leveled logs
 alias mvw='mvn -Dorg.slf4j.simpleLogger.defaultLogLevel=warn'
+
+# Add JBang to environment
+alias j!=jbang
