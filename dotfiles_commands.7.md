@@ -50,6 +50,10 @@ List of commands shipped with this **dotfiles** instance.
 
 :   Run a lightweight verify goal on a (complex) Maven multi-module project.
 
+`mj`
+
+:   Jiggle the mouse.
+
 `pdb_diff`
 
 :   Export KeepassXC database to CSV and diff with `vimdiff`.
