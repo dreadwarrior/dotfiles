@@ -1,3 +1,7 @@
 [user]
     name = Thomas Juhnke
     email = thomas.juhnke@spreadgroup.com
+
+# Add for golang
+[url "ssh://git@git.spreadomat.net/"]
+    insteadOf = https://git.spreadomat.net/
