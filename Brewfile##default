@@ -1,5 +1,3 @@
-tap "homebrew/cask-fonts"
-
 # brew "ansible"
 # brew "asciinema"
 brew "bash-completion@2"
