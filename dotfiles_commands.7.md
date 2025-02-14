@@ -71,10 +71,6 @@ List of commands shipped with this **dotfiles** instance.
 
 :   Outputs information about an (HTTP-)SSL certificate of a given hostname.
 
-`stream`
-
-:   Simple wrapper around `mplayer -playlist` for listening to shoutcast streams.
-
 # SEE ALSO
 
 darwin_ramfs_mount(1), darwin_ramfs_umount(1), docker_scp_deploy(1), fif(1),
