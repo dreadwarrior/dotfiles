@@ -1,6 +1,6 @@
 system_arch=$(uname -m)
 if [ "$system_arch" = "arm64" ]; then
-  # eval Brew shellenv on Apple M1
+  # eval Brew shellenv on Apple Silicon
   eval "$(/opt/homebrew/bin/brew shellenv)"
 elif [ "$system_arch" = "x86_64" ]; then
   # eval Brew shellenv on Apple Intel
