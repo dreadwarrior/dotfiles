@@ -8,8 +8,7 @@
 
 # SYNOPSIS
 
-**`dotfiles_install`** \[`-p`]
-                       \[`-m`]
+**`dotfiles_install`** \[`-m`]
                        \[`-b`]
                        \[`-f`]
                        \[`-h`]
@@ -30,18 +29,12 @@ On **macOS**:
 
 **Cross-plattform**:
 
-- installation of **bash-git-prompt**
-
 The installation routine uses a trivial operating system probing routine to
 protect the user against mutually exclusive installation constellations. E.g.
 using **`-b`** on a non-macOS machine will echo an informational note and
 skip the installation process of dependencies from Brewfiles.
 
 # OPTIONS
-
-`-p`, `--bashgitprompt`, `--no-bashgitprompt`
-
-:   Whether to install **bash-git-prompt** or not. (defaults to "on")
 
 `-m`, `--mokaicontheme`, `--no-mokaicontheme`
 

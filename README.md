@@ -62,7 +62,10 @@
 
 #### Build man pages
 
-     make clean all
+```sh
+cd .local/bin/man
+make clean all
+```
 
 #### Add new man page sections
 
