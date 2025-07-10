@@ -189,32 +189,27 @@ to my needs.</p>
 <li>Homebrew (macOS)</li>
 </ul>
 <h1 id="installation">INSTALLATION</h1>
-<p>On <strong>Linux</strong>:</p>
-<pre><code>$ sudo apt install yadm
-$ cd $HOME
-$ yadm clone git@github.com:dreadwarrior/dotfiles
-$ # the next step is optional for YADM configuration on a business machine:
-$ yadm config local.class work
-$ yadm alt
-$ source ~/.bashrc</code></pre>
-<p>On <strong>macOS</strong>:</p>
+<h2 id="prerequisites-linux">Prerequisites: Linux</h2>
+<pre><code>sudo apt install yadm</code></pre>
+<h2 id="prerequisites-macos">Prerequisites: macOS</h2>
 <pre><code># Install Homebrew + yadm
-$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
-$ brew install yadm
+/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+brew install yadm
 
 # Update bash
-$ brew install bash
-$ sudo bash -c &#39;echo /usr/local/bin/bash &gt;&gt; /etc/shells&#39;
-$ chsh -s /usr/local/bin/bash
-
-# same as on Linux:
-$ cd $HOME
-$ yadm clone git@github.com:dreadwarrior/dotfiles
-$ # the next step is optional for YADM configuration on a business machine:
-$ yadm config local.class work
-$ yadm alt
-$ source ~/.bashrc
-$ $(brew --prefix)/opt/fzf/install</code></pre>
+brew install bash
+sudo bash -c &#39;echo /usr/local/bin/bash &gt;&gt; /etc/shells&#39;
+chsh -s /usr/local/bin/bash</code></pre>
+<h2 id="clone-repository">Clone repository</h2>
+<pre><code>cd $HOME
+yadm clone git@github.com:dreadwarrior/dotfiles</code></pre>
+<h2 id="macos-only-initialize-fzf">macOS only: Initialize fzf</h2>
+<pre><code>$(brew --prefix)/opt/fzf/install</code></pre>
+<h2 id="optional-step-configure-yadm-on-a-business-machine">Optional
+step: configure YADM on a business machine</h2>
+<pre><code>yadm config local.class work
+yadm alt</code></pre>
+<p>Now restart your terminal session.</p>
 <h1 id="features">FEATURES</h1>
 <p>To quickly allow switching to software development projects in
 <strong>workspace</strong> or <strong>playground</strong> folders the

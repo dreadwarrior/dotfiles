@@ -17,39 +17,42 @@ yadm
 .IP \(bu 2
 Homebrew (macOS)
 .SH INSTALLATION
-On \f[B]Linux\f[R]:
+.SS Prerequisites: Linux
 .IP
 .EX
-$ sudo apt install yadm
-$ cd $HOME
-$ yadm clone git\(atgithub.com:dreadwarrior/dotfiles
-$ # the next step is optional for YADM configuration on a business machine:
-$ yadm config local.class work
-$ yadm alt
-$ source \(ti/.bashrc
+sudo apt install yadm
 .EE
-.PP
-On \f[B]macOS\f[R]:
+.SS Prerequisites: macOS
 .IP
 .EX
 # Install Homebrew + yadm
-$ /usr/bin/ruby \-e \(dq$(curl \-fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\(dq
-$ brew install yadm
+/usr/bin/ruby \-e \(dq$(curl \-fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\(dq
+brew install yadm
 
 # Update bash
-$ brew install bash
-$ sudo bash \-c \(aqecho /usr/local/bin/bash >> /etc/shells\(aq
-$ chsh \-s /usr/local/bin/bash
-
-# same as on Linux:
-$ cd $HOME
-$ yadm clone git\(atgithub.com:dreadwarrior/dotfiles
-$ # the next step is optional for YADM configuration on a business machine:
-$ yadm config local.class work
-$ yadm alt
-$ source \(ti/.bashrc
-$ $(brew \-\-prefix)/opt/fzf/install
+brew install bash
+sudo bash \-c \(aqecho /usr/local/bin/bash >> /etc/shells\(aq
+chsh \-s /usr/local/bin/bash
 .EE
+.SS Clone repository
+.IP
+.EX
+cd $HOME
+yadm clone git\(atgithub.com:dreadwarrior/dotfiles
+.EE
+.SS macOS only: Initialize fzf
+.IP
+.EX
+$(brew \-\-prefix)/opt/fzf/install
+.EE
+.SS Optional step: configure YADM on a business machine
+.IP
+.EX
+yadm config local.class work
+yadm alt
+.EE
+.PP
+Now restart your terminal session.
 .SH FEATURES
 To quickly allow switching to software development projects in
 \f[B]workspace\f[R] or \f[B]playground\f[R] folders the following Bash

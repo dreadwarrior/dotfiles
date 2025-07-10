@@ -7,37 +7,48 @@
 1. Minimal dependency footprint ([yadm][yadm] uses `git` and `bash`)
 2. **No** git submodules
 
-## Installation / setup
+## Installation
 
-### Linux
+### Prerequisites: Linux
 
-    ~$ sudo apt install yadm
-    ~$ cd $HOME
-    ~$ yadm clone git@github.com:dreadwarrior/dotfiles
-    ~$ # the next step is optional for YADM configuration on a business machine:
-    ~$ yadm config local.class work
-    ~$ yadm alt
-    ~$ source ~/.bashrc
+```sh
+sudo apt install yadm
+```
 
-### MacOS
+### Prerequisites: macOS
 
-    # Install Homebrew + yadm
-    ~$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    ~$ brew install yadm
+```sh
+# Install Homebrew + yadm
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install yadm
 
-    # Update bash
-    ~$ brew install bash
-    ~$ sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
-    ~$ chsh -s /usr/local/bin/bash
+# Update bash
+brew install bash
+sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
+chsh -s /usr/local/bin/bash
+```
 
-    # same as on Linux:
-    ~$ cd $HOME
-    ~$ yadm clone git@github.com:dreadwarrior/dotfiles
-    ~$ # the next step is optional for YADM configuration on a business machine:
-    ~$ yadm config local.class work
-    ~$ yadm alt
-    ~$ source ~/.bashrc
-    ~$ $(brew --prefix)/opt/fzf/install
+### Clone repository
+
+```sh
+cd $HOME
+yadm clone git@github.com:dreadwarrior/dotfiles
+```
+
+### macOS only: initialize fzf
+
+```sh
+$(brew --prefix)/opt/fzf/install
+```
+
+### Optional step: configure YADM on a business machine
+
+```sh
+yadm config local.class work
+yadm alt
+```
+
+Now restart your terminal session.
 
 ## Development
 
@@ -85,24 +96,38 @@ make clean all
 
 Create new branch if not existing already in the repository:
 
-    true | git mktree | xargs git commit-tree | xargs git branch gh-pages
+```sh
+true | git mktree | xargs git commit-tree | xargs git branch gh-pages
+```
 
 Write Git tree object with current (committed) state of the static resources
 folder:
 
-     > git write-tree --prefix=.local/bin/man
-     < <Git Tree ID>
+```sh
+git write-tree --prefix=.local/bin/man
+```
+
+Output: `<Git Tree ID>`
 
 Commit the tree to the specific branch:
 
-     > git commit-tree -p gh-pages -m "<Your commit message>" <Git Tree ID>
-     < <Git Commit ID>
+```sh
+git commit-tree -p gh-pages -m "<Your commit message>" <Git Tree ID>
+```
+
+Output: `<Git Commit ID>`
 
 Update references on specific branch:
 
-     git update-ref refs/heads/gh-pages <Git Commit ID>
+```sh
+git update-ref refs/heads/gh-pages <Git Commit ID>
+```
 
 The branch is now ready to be pushed to upstream.
+
+```sh
+git push --branches
+```
 
 ## TODOs
 
@@ -110,8 +135,6 @@ The branch is now ready to be pushed to upstream.
 
      - .local/share/gtg/{gtg_tasks,projects,tags}.xml
      - .local/share/gnome-shell/extensions
-
-  2. Integrate global system name probing (`uname -s`), individual usage by `dotfiles-install/*` scripts
 
 ## Links / Notes
 
