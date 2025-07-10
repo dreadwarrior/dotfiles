@@ -18,7 +18,6 @@
     ~$ yadm config local.class work
     ~$ yadm alt
     ~$ source ~/.bashrc
-    ~$ dotfiles_install
 
 ### MacOS
 
@@ -38,7 +37,6 @@
     ~$ yadm config local.class work
     ~$ yadm alt
     ~$ source ~/.bashrc
-    ~$ dotfiles_install
     ~$ $(brew --prefix)/opt/fzf/install
 
 ## Development

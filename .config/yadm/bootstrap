@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-
+# vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:
+#
+# yadm bootstrap hook to finish installation of this dotfiles project.
+
+system_type=$(uname -s)
+
+# Install Homebrew packages
+yadm_bootstrap__darwin_brew_packages() {
+  cd "$HOME" || exit 1
+
+  brew analytics off
+
+  brew bundle install
+}
+
+# Some adjustments for the Finder
+yadm_bootstrap__darwin_finder() {
+  # Show Hidden Files
+  defaults write com.apple.finder AppleShowAllFiles true
+  # Show All File Extensions
+  defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+  # Disable Creation of Metadata Files on Network Volumes
+  # Avoids creation of .DS_Store and AppleDouble files.
+  # See https://github.com/herrbischoff/awesome-osx-command-line#disable-creation-of-metadata-files-on-network-volumes
+  defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+  # Disable Creation of Metadata Files on USB Volumes
+  # Avoids creation of .DS_Store and AppleDouble files.
+  # See https://github.com/herrbischoff/awesome-osx-command-line#disable-creation-of-metadata-files-on-usb-volumes
+  defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+  killall Finder
+}
+
+if [ "$system_type" = "Darwin" ]; then
+  yadm_bootstrap__darwin_brew_packages
+else
+  echo "[skip] Installation of Homebrew packages is available only on macOS machines."
+fi
+
+if [ "$system_type" = "Darwin" ]; then
+  yadm_bootstrap__darwin_finder
+else
+  echo "[skip] Adjusting Finder settings is available only on macOS machines."
+fi
