@@ -20,35 +20,36 @@ quickly set up a macOS or Linux-based workstation according to my needs.
 
 # INSTALLATION
 
-On **Linux**:
+## Prerequisites: Linux
 
-    $ sudo apt install yadm
-    $ cd $HOME
-    $ yadm clone git@github.com:dreadwarrior/dotfiles
-    $ # the next step is optional for YADM configuration on a business machine:
-    $ yadm config local.class work
-    $ yadm alt
-    $ source ~/.bashrc
+    sudo apt install yadm
 
-On **macOS**:
+## Prerequisites: macOS
 
     # Install Homebrew + yadm
-    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    $ brew install yadm
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    brew install yadm
 
     # Update bash
-    $ brew install bash
-    $ sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
-    $ chsh -s /usr/local/bin/bash
+    brew install bash
+    sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
+    chsh -s /usr/local/bin/bash
 
-    # same as on Linux:
-    $ cd $HOME
-    $ yadm clone git@github.com:dreadwarrior/dotfiles
-    $ # the next step is optional for YADM configuration on a business machine:
-    $ yadm config local.class work
-    $ yadm alt
-    $ source ~/.bashrc
-    $ $(brew --prefix)/opt/fzf/install
+## Clone repository
+
+    cd $HOME
+    yadm clone git@github.com:dreadwarrior/dotfiles
+
+## macOS only: Initialize fzf
+
+    $(brew --prefix)/opt/fzf/install
+
+## Optional step: configure YADM on a business machine
+
+    yadm config local.class work
+    yadm alt
+
+Now restart your terminal session.
 
 # FEATURES
 
