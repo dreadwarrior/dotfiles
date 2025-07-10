@@ -29,7 +29,6 @@ On **Linux**:
     $ yadm config local.class work
     $ yadm alt
     $ source ~/.bashrc
-    $ dotfiles_install
 
 On **macOS**:
 
@@ -49,7 +48,6 @@ On **macOS**:
     $ yadm config local.class work
     $ yadm alt
     $ source ~/.bashrc
-    $ dotfiles_install
     $ $(brew --prefix)/opt/fzf/install
 
 # FEATURES
