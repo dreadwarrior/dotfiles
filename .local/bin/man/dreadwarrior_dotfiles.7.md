@@ -60,4 +60,4 @@ To quickly allow switching to software development projects in **workspace** or
 
 # SEE ALSO
 
-dotfiles_install(1), yadm(1), dotfiles_aliases(7), dotfiles_commands(7)
+yadm(1), dotfiles_aliases(7), dotfiles_commands(7)
