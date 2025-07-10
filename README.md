@@ -57,6 +57,7 @@ Now restart your terminal session.
 - Pandoc, e.g. via Homebrew `brew install pandoc`
 - ShellCheck, e.g. via Homebrew `brew install shellcheck`
 - JBang, e.g. via [SDKMAN!](https://sdkman.io/install)
+- [go-task](https://taskfile.dev/)
 
 ### Update `.local/bin`-commands
 
@@ -73,24 +74,8 @@ Now restart your terminal session.
 
 ```sh
 cd .local/bin/man
-make clean all
+task clean all
 ```
-
-#### Add new man page sections
-
-1. Add new variables with appropriate values (use existing ones as examples):
-
-       BUILD_DIR_MAN_SECTIONnnn
-       BUILD_DIR_HTM_SECTIONnnn
-       SRCS_SECTIONnnn
-       OBJS_MAN_SECTIONnnn
-       OBJS_HTM_SECTIONnnn
-
-   Where _nnn_ reflects the new [section](https://en.wikipedia.org/wiki/Man_page#Manual_sections) (e.g. "2").
-
-2. Add new `OBJS_` variables to `all`-target:
-3. Add new rules for `BUILD_DIR_MAN_` and `BUILD_DIR__HTM_` targets
-4. Adjust `clean target` for cleaning up new build dirs
 
 #### Upgrade gh-pages branch
 

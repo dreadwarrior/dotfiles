@@ -300,3 +300,5 @@ jspm_packages
 .sass-cache/
 *.css.map
 
+# go-task checksums
+.task/checksums
