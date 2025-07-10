@@ -1,0 +1,68 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  man:
+    desc: Generate man pages.
+    summary: |
+      Generate man pages for each Markdown file in the current directory.
+
+      The generated file is placed in the man<SECTION> subfolder according to 
+      the defined section of the source file.
+
+      The section is specified as an additional file extension before the actual 
+      file extension of the Markdown file.
+
+      Example: The man page of foo.1.md is generated under ./man1/foo.1
+    cmds:
+      - for: sources
+        cmd: mkdir -p ./man{{ index (splitList "." .ITEM) 1 }} && pandoc --standalone --to man -o ./man{{ index (splitList "." .ITEM) 1 }}/{{ index (splitList "." .ITEM) 0 }}.{{ index (splitList "." .ITEM) 1 }} {{ .ITEM }}
+    sources:
+      - ./*.*.md
+    generates:
+      - ./man**/*
+
+  html:
+    desc: Generate HTML man pages.
+    summary: |
+      Generate HTML man pages for each Markdown file in the current directory.
+
+      The generated file is placed in the htmlman<SECTION> subfolder according to 
+      the defined section of the source file.
+
+      The section is specified as an additional file extension before the actual 
+      file extension of the Markdown file.
+
+      Example: The man page of foo.1.md is generated under ./htmlman1/foo.1
+    cmds:
+      - for: sources
+        cmd: mkdir -p ./htmlman{{ index (splitList "." .ITEM) 1 }} && pandoc --standalone --to html -o ./htmlman{{ index (splitList "." .ITEM) 1 }}/{{ initial (splitList "." .ITEM) | join "." }}.html {{ .ITEM }}
+    sources:
+      - ./*.*.md
+    generates:
+      - ./htmlman**/*
+
+  index:
+    desc: Generate HTML man page of the index Markdown.
+    cmds:
+      - for: sources
+        cmd: pandoc --standalone --to html -o ./index.html {{ .ITEM }}
+    sources:
+      - ./index.md
+    generates:
+      - ./index.html
+
+  clean:
+    desc: Cleanup generated man pages, HTML man pages and index HTML man page.
+    cmds:
+      - rm -rf ./man**
+      - rm -rf ./htmlman**
+      - rm -rf ./index.html
+
+  all:
+    desc: Generate index HTML man page, man pages and HTML man pages.
+    deps:
+      - index
+      - man
+      - html
