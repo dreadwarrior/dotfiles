@@ -83,13 +83,6 @@ task clean all
 task gh-pages
 ```
 
-## TODOs
-
-  1. Test if these files are really needed and check security concerns:
-
-     - .local/share/gtg/{gtg_tasks,projects,tags}.xml
-     - .local/share/gnome-shell/extensions
-
 ## Links / Notes
 
   - [Upgrade to bash 4 in Mac OS X](http://clubmate.fi/upgrade-to-bash-4-in-mac-os-x/)
