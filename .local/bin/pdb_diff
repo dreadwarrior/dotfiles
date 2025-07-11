@@ -140,7 +140,7 @@ if [ "$system_type" = "Darwin" ]; then
   if type "$_keepassxccli_path" &> /dev/null; then
     "$_keepassxccli_path" export --format csv "$_arg_filea" > pdb-1.csv
     "$_keepassxccli_path" export --format csv "$_arg_fileb" > pdb-2.csv
-    vimdiff pdb-1.csv pdb-2.csv
+    idea diff pdb-1.csv pdb-2.csv
 
     read -p "Press any key to cleanup export files... " -n1 -s
     echo
