@@ -9,6 +9,12 @@
 
 ## Installation
 
+### Prerequisites: oh-my-zsh
+
+```sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
 ### Prerequisites: Linux
 
 ```sh
@@ -21,11 +27,6 @@ sudo apt install yadm
 # Install Homebrew + yadm
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install yadm
-
-# Update bash
-brew install bash
-sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
-chsh -s /usr/local/bin/bash
 ```
 
 ### Clone repository
@@ -33,12 +34,6 @@ chsh -s /usr/local/bin/bash
 ```sh
 cd $HOME
 yadm clone git@github.com:dreadwarrior/dotfiles
-```
-
-### macOS only: initialize fzf
-
-```sh
-$(brew --prefix)/opt/fzf/install
 ```
 
 ### Optional step: configure YADM on a business machine
