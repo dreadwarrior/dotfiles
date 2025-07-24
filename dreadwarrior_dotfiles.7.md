@@ -20,6 +20,10 @@ quickly set up a macOS or Linux-based workstation according to my needs.
 
 # INSTALLATION
 
+### Prerequisites: oh-my-zsh
+
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 ## Prerequisites: Linux
 
     sudo apt install yadm
@@ -30,19 +34,10 @@ quickly set up a macOS or Linux-based workstation according to my needs.
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew install yadm
 
-    # Update bash
-    brew install bash
-    sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
-    chsh -s /usr/local/bin/bash
-
 ## Clone repository
 
     cd $HOME
     yadm clone git@github.com:dreadwarrior/dotfiles
-
-## macOS only: Initialize fzf
-
-    $(brew --prefix)/opt/fzf/install
 
 ## Optional step: configure YADM on a business machine
 
@@ -50,13 +45,6 @@ quickly set up a macOS or Linux-based workstation according to my needs.
     yadm alt
 
 Now restart your terminal session.
-
-# FEATURES
-
-To quickly allow switching to software development projects in **workspace** or
-**playground** folders the following Bash **CDPATH** is pre-configured:
-
-    export CDPATH="$HOME/workspace:$HOME/playground:$CDPATH"
 
 # SEE ALSO
 

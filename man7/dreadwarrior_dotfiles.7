@@ -17,6 +17,11 @@ yadm
 .IP \(bu 2
 Homebrew (macOS)
 .SH INSTALLATION
+.SS Prerequisites: oh\-my\-zsh
+.IP
+.EX
+sh \-c \(dq$(curl \-fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\(dq
+.EE
 .SS Prerequisites: Linux
 .IP
 .EX
@@ -28,22 +33,12 @@ sudo apt install yadm
 # Install Homebrew + yadm
 /usr/bin/ruby \-e \(dq$(curl \-fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\(dq
 brew install yadm
-
-# Update bash
-brew install bash
-sudo bash \-c \(aqecho /usr/local/bin/bash >> /etc/shells\(aq
-chsh \-s /usr/local/bin/bash
 .EE
 .SS Clone repository
 .IP
 .EX
 cd $HOME
 yadm clone git\(atgithub.com:dreadwarrior/dotfiles
-.EE
-.SS macOS only: Initialize fzf
-.IP
-.EX
-$(brew \-\-prefix)/opt/fzf/install
 .EE
 .SS Optional step: configure YADM on a business machine
 .IP
@@ -53,13 +48,5 @@ yadm alt
 .EE
 .PP
 Now restart your terminal session.
-.SH FEATURES
-To quickly allow switching to software development projects in
-\f[B]workspace\f[R] or \f[B]playground\f[R] folders the following Bash
-\f[B]CDPATH\f[R] is pre\-configured:
-.IP
-.EX
-export CDPATH=\(dq$HOME/workspace:$HOME/playground:$CDPATH\(dq
-.EE
 .SH SEE ALSO
 yadm(1), dotfiles_aliases(7), dotfiles_commands(7)
