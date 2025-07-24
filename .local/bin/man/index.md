@@ -12,10 +12,6 @@ The manpages.
 
 :   Motivation, overview and installation instructions.
 
-[dotfiles_install(1)](./htmlman1/dotfiles_install.1.html)
-
-:   Finishing the local **dotfiles** installation.
-
 [dotfiles_commands(7)](./htmlman7/dotfiles_commands.7.html)
 
 :   List of (hopefully) useful commands available after installation.

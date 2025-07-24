@@ -8,11 +8,10 @@
 
 # DESCRIPTION
 
-Here a list of all Bash shell aliases should be documented, but while 
-researching I found out the following command is very helpful if someone needs
-an overview:
+Here a list of all shell aliases should be documented, but while researching, I
+found out the following command is very helpful if someone needs an overview:
 
-    $ alias -p
+    $ alias
 
 So I'll leave this explanatory document here to help my future self ;).
 
