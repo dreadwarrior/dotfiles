@@ -22,6 +22,7 @@ The manpages.
 
 ## Commands
 
+* [7ze](./htmlman1/7ze.1.html)
 * [darwin_ramfs_mount(1)](./htmlman1/darwin_ramfs_mount.1.html)
 * [darwin_ramfs_umount(1)](./htmlman1/darwin_ramfs_mount.1.html)
 * [docker_scp_deploy(1)](./htmlman1/docker_scp_deploy.1.html)
