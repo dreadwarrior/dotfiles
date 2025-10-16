@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="" />
-  <title>mj(1) dreadwarrior | dotfiles</title>
+  <title>7ze(1) dreadwarrior | dotfiles</title>
   <style>
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -174,22 +174,35 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">mj(1) dreadwarrior | dotfiles</h1>
+<h1 class="title">7ze(1) dreadwarrior | dotfiles</h1>
 <p class="author"></p>
-<p class="date">June 2024</p>
+<p class="date">October 2025</p>
 </header>
 <h1 id="name">NAME</h1>
-<p><strong>mj</strong> - Jiggle the mouse.</p>
+<p><strong>7ze</strong> - Create a password-protected, strongly
+encrypted 7-zip archive.</p>
 <h1 id="synopsis">SYNOPSIS</h1>
-<p><strong><code>mj</code></strong></p>
+<p><strong><code>7ze</code></strong> <em>archive file name</em>
+<em>file(s)</em></p>
 <h1 id="description">DESCRIPTION</h1>
-<p>Jiggle the mouse in case you don’t want your computer to go in sleep
-mode.</p>
-<p>Requires at least Java v17 and JBang.</p>
-<p>Run <code>j! app install ~/.local/bin/mj.java</code> to install.</p>
+<p>Create a password-protected, strongly encrypted 7-zip archive.</p>
 <h1 id="options">OPTIONS</h1>
-<p>None</p>
+<dl>
+<dt><em>archive file name</em></dt>
+<dd>
+<p>Name of the archive, without file extension.</p>
+</dd>
+<dt><em>file(s)</em></dt>
+<dd>
+<p>Path to files to be added to the archive, space separated.</p>
+</dd>
+</dl>
 <h1 id="examples">EXAMPLES</h1>
-<pre><code>$ mj</code></pre>
+<p>Create a 7z archive named <code>foo.7z</code> with the files
+<code>a.txt</code> and <code>b.jpeg</code> from the current
+directory:</p>
+<pre><code>$ 7ze foo a.txt b.jpeg</code></pre>
+<h1 id="see-also">SEE ALSO</h1>
+<p>7z(1), 7zz(1)</p>
 </body>
 </html>

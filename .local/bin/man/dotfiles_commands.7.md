@@ -10,6 +10,10 @@
 
 List of commands shipped with this **dotfiles** instance.
 
+`7ze`
+
+:   Create a password-protected, strongly encrypted 7-zip archive.
+
 `brew_fix_sslread`
 
 :   Fixes "SSLRead() return error -9806" on macOS using brew.

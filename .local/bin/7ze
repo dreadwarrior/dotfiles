@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 2 -*-
+# vim:set expandtab tabstop=2 fenc=utf-8 fileformat=unix filetype=sh:
+#
+
+# Create a password-protected, strongly encrypted 7-zip archive
+
+7zz a -p -t7z -m0=lzma2 -mx=9 -mfb=64 -md=32m -ms=on -mhe=on ${1}.7z ${@:2}
