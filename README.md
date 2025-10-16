@@ -75,7 +75,7 @@ task clean all
 #### Upgrade gh-pages branch
 
 ```sh
-task gh-pages
+MESSAGE='Update documentation' task gh-pages
 ```
 
 ## Links / Notes
